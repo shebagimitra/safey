@@ -34,9 +34,8 @@ try:
         dummy_btn = gr.Button("Status", visible=False)
         dummy_btn.click(fn=check_system, outputs=[])
 
-    # Mount FastAPI routes and handlers onto Gradio's internal FastAPI app
-    for route in fastapi_app.routes:
-        demo.app.routes.append(route)
+    # Prepend FastAPI routes so API endpoints and frontend take precedence
+    demo.app.routes = fastapi_app.routes + demo.app.routes
 
     if __name__ == "__main__":
         demo.launch(server_name="0.0.0.0", server_port=7860)
