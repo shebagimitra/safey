@@ -11,6 +11,17 @@ import os
 import uvicorn
 from api.main import app, init_db_if_missing
 
+# Hugging Face ZeroGPU compatibility
+try:
+    import spaces
+
+    @spaces.GPU
+    def _zero_gpu_support():
+        """Satisfy ZeroGPU startup check."""
+        return True
+except Exception:
+    pass
+
 # Ensure replay-only mode and default paths in cloud deployment
 os.environ.setdefault("ALLOW_LIVE", "false")
 os.environ.setdefault("DATA_DIR", "data")
