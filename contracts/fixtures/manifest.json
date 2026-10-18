@@ -1,0 +1,28 @@
+[
+  {
+    "document_id": "FIXTURE:DOC-2026-001",
+    "title": "FIXTURE:Factual Report - Landing Gear Actuator Assembly",
+    "file_path": "FIXTURE:raw_pdfs/factual_report_2026_001.pdf",
+    "source_url": "FIXTURE:https://data.ntsb.gov/Docket/doc_2026_001.pdf",
+    "publisher": "FIXTURE:National Transportation Safety Board",
+    "document_type": "FIXTURE:factual_report",
+    "publication_date": "FIXTURE:2026-03-10",
+    "retrieval_date": "FIXTURE:2026-03-15",
+    "case_id": "FIXTURE:CASE-2026-LG",
+    "split": "prediction",
+    "notes": "FIXTURE:Factual docket release prior to final determination."
+  },
+  {
+    "document_id": "FIXTURE:DOC-2026-002",
+    "title": "FIXTURE:Final Determination and Probable Cause Statement",
+    "file_path": "FIXTURE:raw_pdfs/final_report_2026_002.pdf",
+    "source_url": "FIXTURE:https://data.ntsb.gov/Docket/doc_2026_002.pdf",
+    "publisher": "FIXTURE:National Transportation Safety Board",
+    "document_type": "FIXTURE:final_report",
+    "publication_date": "FIXTURE:2026-09-20",
+    "retrieval_date": "FIXTURE:2026-09-25",
+    "case_id": "FIXTURE:CASE-2026-LG",
+    "split": "truth",
+    "notes": "FIXTURE:Withheld official conclusion for evaluation scoring."
+  }
+]

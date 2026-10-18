@@ -1,0 +1,25 @@
+{
+  "run_id": "run-784c6db7137a",
+  "run_label": "0",
+  "model_name": "self-dploy/Gemma-4-31B-IT",
+  "config": {
+    "temperature": 0.0,
+    "thinking": false,
+    "max_model_len": 0,
+    "other": {
+      "max_tokens": 4000
+    }
+  },
+  "pack_id": "pack_case_demo_01_landing_gear_0_c0cd20743211",
+  "raw_output": "Based on available information regarding Alaska Airlines Flight 1288, the left main landing gear collapsed upon landing at John Wayne Airport.\n\nThe cause of the collapse was a failure of the landing gear assembly, specifically involving the structural integrity of the gear during the landing sequence.\n\nWhat remains unknown or subject to ongoing investigation is the precise root cause of the failure—specifically whether the collapse was triggered by a pre-existing fatigue crack, a material defect, or an external factor during the landing phase. The exact sequence of mechanical failures leading to the collapse of the gear strut is the primary focus of the technical investigation.",
+  "assessment": null,
+  "verification": null,
+  "metrics": {
+    "latency_s": 19.2033,
+    "input_tokens": 117,
+    "output_tokens": 124,
+    "tokens_per_s": 6.46
+  },
+  "timestamp": "2026-10-18T00:41:33Z",
+  "error": null
+}

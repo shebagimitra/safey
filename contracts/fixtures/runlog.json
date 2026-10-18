@@ -1,0 +1,38 @@
+{
+  "run_id": "FIXTURE:RUN-2026-001",
+  "run_label": "A",
+  "model_name": "FIXTURE:google/gemma-4-26B-A4B-it",
+  "config": {
+    "temperature": 0.1,
+    "thinking": false,
+    "max_model_len": 8192,
+    "other": {
+      "FIXTURE:top_p": 0.95
+    }
+  },
+  "pack_id": "FIXTURE:PACK-2026-LG-01",
+  "raw_output": "FIXTURE:{\"case_id\":\"FIXTURE:CASE-2026-LG\",\"selected_component\":\"landing_gear\"}",
+  "assessment": null,
+  "verification": {
+    "status": "verified",
+    "claim_checks": [
+      {
+        "claim_ref": "FIXTURE:H1.supporting_evidence[0]",
+        "evidence_id": "FIXTURE:PASSAGE-002",
+        "id_exists": true,
+        "quote_found": true,
+        "downgraded": false,
+        "reason": null
+      }
+    ],
+    "retries_used": 0
+  },
+  "metrics": {
+    "latency_s": 2.45,
+    "input_tokens": 520,
+    "output_tokens": 310,
+    "tokens_per_s": 126.5
+  },
+  "timestamp": "FIXTURE:2026-10-15T10:05:00Z",
+  "error": null
+}

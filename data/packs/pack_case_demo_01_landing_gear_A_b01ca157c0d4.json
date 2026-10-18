@@ -1,0 +1,100 @@
+{
+  "pack_id": "pack_case_demo_01_landing_gear_A_b01ca157c0d4",
+  "case_id": "case_demo_01",
+  "component_id": "landing_gear",
+  "question": "For Alaska Airlines flight 1288 (Boeing 737-800, N516AS, Santa Ana, California, August 20, 2023), what caused the left main landing gear collapse, and what remains unknown?",
+  "created_at": "2026-10-18T03:34:08Z",
+  "token_budget": 3000,
+  "approx_tokens": 2774,
+  "passages": [
+    {
+      "passage_id": "doc1-p1-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 1,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 3 of 13 DCA23FA417\nFactual Information\nHistory of Flight\nLanding Sys/Comp malf/fail (non-power) (Defining event)\nLanding Landing gear collapse\nOn August 20, 2023, about 2315 Pacific daylight time (PDT), Alaska Airlines flight 1288, a Boeing \n737-800, N516AS, sustained substantial damage when the left MLG collapsed after landing on \nrunway 20R at John Wayne-Orange County Airport (SNA), Santa Ana, California. The 112 \npassengers and crewmembers evacuated the airplane via stairs onto a taxiway with no injuries \nreported. The flight was operating under the provisions of Title 14 Code of Federal Regulations \nPart 121 as a scheduled domestic passenger flight from Seattle, Washington, to SNA. The flight crewmembers reported that, before the final approach fix, the airplane was fully \nconfigured for landing and on a stabilized approach and that the before landing checklist was \ncompleted. Moderate rain, shifting wind, light turbulence, and instrument meteorological \nconditions were encountered as the airplane descended toward the airport. About 800 ft above \nground level, the flight crew visually acquired the runway, and the captain, who was the pilot \nflying, disengaged the autopilot and autothrottle. The airplane was aligned with the glidepath \nwhen crossing the runway threshold. The flight crew noted that all the landing gear position \nindicator lights were green, indicating both MLG and the nose gear were in their down and locked \nposition."
+    },
+    {
+      "passage_id": "doc1-p1-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 1,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Flight data recorder (FDR) data showed that, at 2314:57, the MLG touched down, and the nose \ngear touched down about 1 second later. The maximum vertical acceleration recorded at \ntouchdown was about 1.71 G. The thrust reverser and spoiler deployment occurred normally. According to the captain, the touchdown had a \u201cfirm jolt feeling,\u201d and the airplane was \u201cpulling \nreasonably hard\u201d to the left. The captain overcame the left veer with rudder pedal input, and the \nairplane tracked the runway centerline. The captain thought that the tire on the left MLG was \nflat. The first officer (FO), who was the pilot monitoring, completed the after landing procedures, \nwhich included bringing the auxiliary power unit (APU) online. The captain slowed the airplane \nto taxi speed, and the airplane exited the runway onto a taxiway. After the airplane turned onto \nthe taxiway, the crew noticed that the airplane was leaning to the left. FDR data indicated that \nthe airplane came to rest at a roll attitude that was about 5\u00b0 left. The captain stopped the airplane on the taxiway, set the parking brake, and opened his cockpit \nwindow to observe the airplane. He saw that the airplane was resting on its left engine cowling \n(see figure 1); as a result, he immediately shut down the left engine. Inside the cockpit, the \ncaptain noted that the left MLG green position indicator light had extinguished, whereas the nose"
+    },
+    {
+      "passage_id": "doc1-p10-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 10,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 12 of 13 DCA23FA417\nspeed 36 knots, left main landing gear aft trunnion pin broke and aircraft started deviating \nto the left of center line. The aircraft came to stop on\nrunway with damage to the LH landing gear and resting on LH engine. March 3, 2016 - Jet Airways Boeing 737-900, VT-JGD:\nWhile operating scheduled domestic passenger flight 9W-354 from Delhi to Mumbai with \n120 passengers and 8 crew on 03-03-2016 was involved in an accident at Chhatrapati \nShivaji International (CSI) Airport, Mumbai. The aircraft had safely landed on runway 27 \nat 16:22 UTC and was about to vacate the runway via taxiway N9 when the right main \nlanding gear collapsed. July 16, 2018 - Gol Airlines Boeing 737-800, PR-GGD:\nDuring landing, at the moment of touch, a loud noise was heard by the cabin crew. The \naircraft taxied by its own means to the apron, where passengers disembarked normally. When conducting the post-flight inspection, the maintenance team identified a leakage \nof hydraulic fluid and the breakdown of a component of the right main landing gear. December 22, 2019 - United Airlines Boeing 737-800, N87513\nThis accident occurred when the left main landing gear of a United Airlines Boeing 737-\n800 collapsed during the landing roll. Both flight crewmembers reported that the \nairplane had touched down smoothly on the runway centerline, but the first officer \nreported that he then felt the airplane \u201cshudder\u201d and tilt left wing down."
+    },
+    {
+      "passage_id": "doc1-p10-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 10,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Postaccident \nexamination found that the aft trunnion pin in the left main landing gear failed during the \nlanding due to a fatigue crack."
+    },
+    {
+      "passage_id": "doc1-p4-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 4,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 6 of 13 DCA23FA417\nAircraft and Owner/Operator Information \nAircraft Make: Boeing Registration: N516AS\nModel/Series: 737-890 Aircraft Category: Airplane\nYear of Manufacture: 2008 Amateur Built:\nAirworthiness Certificate: Normal Serial Number: 39044\nLanding Gear Type: Retractable - Tricycle Seats: 149\nDate/Type of Last \nInspection:\n Continuous airworthiness Certified Max Gross Wt.: 174700 lbs\nTime Since Last Inspection: Engines: 2 \nAirframe Total Time: 53207.34 Hrs at time of \naccident\nEngine Manufacturer:\nELT: Installed Engine Model/Series:\nRegistered Owner: WILMINGTON TRUST CO \nTRUSTEE\nRated Power:\nOperator: Alaska Airlines Operating Certificate(s) \nHeld:\nFlag carrier (121)\nThe left and right MLG absorb landing forces through the tire assembly and support most of the \nairplane's weight when on the ground. Each MLG also transmits the wheel braking forces to the \nairplane structure.\nA main gear shock strut provides the primary support for each MLG (see figure 2). The shock \nstrut consists of an integral drag strut, an outer cylinder, and an inner cylinder. When the MLG \nextends or retracts, the shock strut rotates about two trunnion bearings and two pins (forward \nand aft) at the top of the outer shock strut. The forward and aft trunnion pins extend through a \ntrunnion bearing and support assembly in the wing and landing gear beam. Trunnion bolts keep \nthe trunnion pins from backing out during landing gear operation."
+    },
+    {
+      "passage_id": "doc1-p5-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 5,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 7 of 13 DCA23FA417\nFigure 2. Illustration of the MLG components. (Source: Boeing. Image Copyright Boeing. Reproduced with permission.)\nAlaska Airlines' maintenance program indicated that the left and right MLG assemblies must be \noverhauled every 21,000 flight cycles or 10 years. Alaska Airlines\u2019 maintenance records showed \nthat the left MLG assembly, including the aft trunnion pin, had been overhauled by Sunvair Inc. in Valencia, California, on July 5, 2018. At that time, the landing gear assembly had accumulated \n11,116 flight cycles. According to documentation of the overhaul procedure, during the overhaul of the aft trunnion \npin the original chromium layer had been stripped from the trunnion pin by grinding its surface. After the removal of the chromium layer, a temper etch inspection and a magnetic particle \ninspection were completed. After these inspections and shot peening were completed, a new \nlayer of chromium electroplating was applied to the surface of the trunnion pin. The outer \ndiameter of the pin was then machined (by grinding) to achieve a specific diameter, and another \nmagnetic particle inspection was completed. The overhauled left MLG assembly was installed on the accident airplane on July 17, 2018. At \nthat time, the airplane had accumulated 11,144 flight cycles. At the time of the accident, the \nairplane had accumulated 53,207 flight hours and 15,854 flight cycles."
+    },
+    {
+      "passage_id": "doc1-p5-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 5,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "At the time of the accident, the \nairplane had accumulated 53,207 flight hours and 15,854 flight cycles. The landing gear had \nbeen installed on the airplane for 4,710 flight cycles since its installation in July 2018."
+    },
+    {
+      "passage_id": "doc1-p6-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 6,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "The inspection also found that the left \nMLG aft trunnion pin had fractured in half vertically across its diameter. One-half of the aft \ntrunnion pin remained within the spherical bearing of the rear landing gear beam, and the other"
+    },
+    {
+      "passage_id": "doc1-p7-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 7,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 9 of 13 DCA23FA417\nhalf remained in the outer cylinder of the MLG trunnion. The trunnion pin half that remained in \nthe landing gear beam spherical bearing had moved aft and was found protruding from the aft \nside of the bearing. The left MLG aft trunnion pin had fractured approximately perpendicular to the length of the pin \nat its midspan. The trunnion pin was extracted from the airplane for further examination. The aft \nsection of the pin was between 4.5 and 5.0 inches long, and the forward section of pin was \nbetween 5.25 and 6.0 inches long. The aft section of the trunnion pin was examined at Boeing\u2019s \nEquipment Quality Analysis (EQA) laboratory in Seattle, Washington with NTSB personnel \npresent. The forward section of the trunnion pin was removed from the aircraft over a month \nlater, and was sent to the NTSB Material Laboratory, where it was examined before bringing it to \nthe Boeing EQA lab for additional Barkhausen and temper etch inspections. The results of the \nexaminations at the NTSB Materials Lab and Boeing EQA lab are discussed below. Trunnion Pin \u2013 Aft Section\nWhen examined, the aft section of the trunnion pin was placed in approximately the same \norientation as it would be installed on the airplane. Visual examination showed that most of the \nfracture surface was rough with a dull gray luster, and many of its edges had small shear lips."
+    },
+    {
+      "passage_id": "doc1-p8-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 8,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Overall, the fracture features of the thumbnail crack were consistent with multiple crack \ninitiation sites along the facets of the intergranular region. These smaller cracks had \ncoalesced during early crack propagation, as evidenced by the ratchet marks in that portion of \nthe fatigue crack. Flight recorders\nThe event airplane was manufactured in 2008 and was operating such that it was required to be \nequipped with a flight data recorder (FDR) that recorded, at a minimum, 91 parameters, as cited \nin 14 CFR Part 121.344(f). The parameters evaluated for the purpose of this investigation \nappeared to be in accordance with federal FDR carriage requirements, except left brake pressure \n(Brake Press-LT) and right brake pressure (Brake Press-RT). For more detailed information, see \nthe Flight Data Recorder - Specialist\u2019s Factual Report located in the docket. The aircraft began its descent about 2245. During final approach, the airplane encountered a 60-\ndegree crosswind with a recorded windspeed reaching 43 knots before decreasing closer to \ntouchdown. At 2314:57, the MLG touched down, and the nose gear touched down 1 second later. The maximum vertical acceleration recorded at touchdown was about 1.71 g. The thrust \nreverser and spoiler deployment occurred normally, and the airplane came to rest with its left \nwing rolled about 5 degrees to the left."
+    },
+    {
+      "passage_id": "doc1-p9-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 9,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "These data indicate \nthat the fatigue crack had not been present at, or before, the part overhaul. Additional Information\nIn a review of National Transportation Safety Board investigations and assisted international \ninvestigations, there were four similar main landing gear trunnion pin failure accidents \ninvolving Boeing 737 aircraft. Those investigations were:\nApril 13, 2015 - Jet Airways Boeing 737-800, VT-JGA:\nJet Airways flight 9W-2423 (Delhi -Varanasi-Khajuraho\u2013Delhi) was involved in an accident \nat Khajuraho Airport at 0751 UTC. During landing Roll, 15 seconds after touchdown, at"
+    }
+  ],
+  "content_hash": "b237b13ad0e46880ae14dbba3fccf083fd37f0a15bf49f9ed44e188f7b5e2842"
+}

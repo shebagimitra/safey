@@ -1,0 +1,2247 @@
+/* ============================================================
+ * COMPONENT: C8 - Aircraft Schematic Styles
+ * PURPOSE: Styling and theming for interactive SVG aircraft schematic, status badges, tooltip, and legend.
+ * INPUT: CSS custom properties (theme variables), DOM classes (.schematic-*, .status-*).
+ * OUTPUT: High-contrast projector-ready visual layout for light and dark modes.
+ * CALLED BY: frontend/schematic_demo.html, main application stylesheets      CALLS: None
+ * IF IT BREAKS, CHECK: CSS variable fallbacks, SVG fill/stroke specificity, selector hierarchy.
+ * ============================================================ */
+
+/* ============================================================ */
+/* SECTION: C8 Aircraft Schematic Styles                        */
+/* ============================================================ */
+
+/* Default Light Theme Variables */
+:root {
+  --schematic-bg: #f8fafc;
+  --schematic-card-bg: #ffffff;
+  --schematic-border: #cbd5e1;
+  --schematic-text: #0f172a;
+  --schematic-text-muted: #475569;
+
+  /* Airframe Neutral Structure */
+  --schematic-airframe-fill: #e2e8f0;
+  --schematic-airframe-stroke: #334155;
+  --schematic-airframe-accent: #94a3b8;
+  --schematic-cockpit: #0284c7;
+  --schematic-cockpit-stroke: #0369a1;
+
+  /* Blueprint §12.4 Evidence Strength Status Colors (Projector-Tuned High Contrast) */
+  --color-status-red: #dc2626;
+  --color-status-red-bg: rgba(220, 38, 38, 0.22);
+  --color-status-red-stroke: #991b1b;
+  --color-status-red-badge-text: #ffffff;
+
+  --color-status-amber: #d97706;
+  --color-status-amber-bg: rgba(217, 119, 6, 0.24);
+  --color-status-amber-stroke: #92400e;
+  --color-status-amber-badge-text: #ffffff;
+
+  --color-status-blue: #2563eb;
+  --color-status-blue-bg: rgba(37, 99, 235, 0.22);
+  --color-status-blue-stroke: #1e40af;
+  --color-status-blue-badge-text: #ffffff;
+
+  --color-status-green: #16a34a;
+  --color-status-green-bg: rgba(22, 163, 74, 0.22);
+  --color-status-green-stroke: #166534;
+  --color-status-green-badge-text: #ffffff;
+
+  --color-status-gray: #64748b;
+  --color-status-gray-bg: rgba(100, 116, 139, 0.16);
+  --color-status-gray-stroke: #475569;
+  --color-status-gray-badge-text: #ffffff;
+
+  /* Interactive States */
+  --schematic-focus-outline: #f59e0b;
+  --schematic-selected-outline: #2563eb;
+  --schematic-selected-glow: rgba(37, 99, 235, 0.7);
+}
+
+/* Explicit Dark Theme and Preferred Dark Color Scheme */
+[data-theme="dark"] {
+  --schematic-bg: #0f172a;
+  --schematic-card-bg: #1e293b;
+  --schematic-border: #334155;
+  --schematic-text: #f8fafc;
+  --schematic-text-muted: #94a3b8;
+
+  /* Airframe Neutral Structure */
+  --schematic-airframe-fill: #1e293b;
+  --schematic-airframe-stroke: #94a3b8;
+  --schematic-airframe-accent: #475569;
+  --schematic-cockpit: #38bdf8;
+  --schematic-cockpit-stroke: #7dd3fc;
+
+  /* Dark-Mode Status Colors */
+  --color-status-red: #ef4444;
+  --color-status-red-bg: rgba(239, 68, 68, 0.28);
+  --color-status-red-stroke: #f87171;
+  --color-status-red-badge-text: #ffffff;
+
+  --color-status-amber: #f59e0b;
+  --color-status-amber-bg: rgba(245, 158, 11, 0.28);
+  --color-status-amber-stroke: #fbbf24;
+  --color-status-amber-badge-text: #ffffff;
+
+  --color-status-blue: #3b82f6;
+  --color-status-blue-bg: rgba(59, 130, 246, 0.28);
+  --color-status-blue-stroke: #60a5fa;
+  --color-status-blue-badge-text: #ffffff;
+
+  --color-status-green: #22c55e;
+  --color-status-green-bg: rgba(34, 197, 94, 0.28);
+  --color-status-green-stroke: #4ade80;
+  --color-status-green-badge-text: #ffffff;
+
+  --color-status-gray: #94a3b8;
+  --color-status-gray-bg: rgba(148, 163, 184, 0.20);
+  --color-status-gray-stroke: #cbd5e1;
+  --color-status-gray-badge-text: #0f172a;
+
+  /* Interactive States */
+  --schematic-focus-outline: #fbbf24;
+  --schematic-selected-outline: #60a5fa;
+  --schematic-selected-glow: rgba(96, 165, 250, 0.75);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --schematic-bg: #0f172a;
+    --schematic-card-bg: #1e293b;
+    --schematic-border: #334155;
+    --schematic-text: #f8fafc;
+    --schematic-text-muted: #94a3b8;
+
+    --schematic-airframe-fill: #1e293b;
+    --schematic-airframe-stroke: #94a3b8;
+    --schematic-airframe-accent: #475569;
+    --schematic-cockpit: #38bdf8;
+    --schematic-cockpit-stroke: #7dd3fc;
+
+    --color-status-red: #ef4444;
+    --color-status-red-bg: rgba(239, 68, 68, 0.28);
+    --color-status-red-stroke: #f87171;
+    --color-status-red-badge-text: #ffffff;
+
+    --color-status-amber: #f59e0b;
+    --color-status-amber-bg: rgba(245, 158, 11, 0.28);
+    --color-status-amber-stroke: #fbbf24;
+    --color-status-amber-badge-text: #ffffff;
+
+    --color-status-blue: #3b82f6;
+    --color-status-blue-bg: rgba(59, 130, 246, 0.28);
+    --color-status-blue-stroke: #60a5fa;
+    --color-status-blue-badge-text: #ffffff;
+
+    --color-status-green: #22c55e;
+    --color-status-green-bg: rgba(34, 197, 94, 0.28);
+    --color-status-green-stroke: #4ade80;
+    --color-status-green-badge-text: #ffffff;
+
+    --color-status-gray: #94a3b8;
+    --color-status-gray-bg: rgba(148, 163, 184, 0.20);
+    --color-status-gray-stroke: #cbd5e1;
+    --color-status-gray-badge-text: #0f172a;
+
+    --schematic-focus-outline: #fbbf24;
+    --schematic-selected-outline: #60a5fa;
+    --schematic-selected-glow: rgba(96, 165, 250, 0.75);
+  }
+}
+
+/* Schematic Container Root */
+.schematic-root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--schematic-bg);
+  color: var(--schematic-text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.schematic-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  background: var(--schematic-card-bg);
+  border: 2px solid var(--schematic-border);
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.schematic-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 580px;
+  user-select: none;
+}
+
+/* Remove browser focus outline from SVG root and outer containers */
+#schematic-container,
+#schematic-container:focus,
+#schematic-container:focus-visible,
+.schematic-root,
+.schematic-root:focus,
+.schematic-root:focus-visible,
+.schematic-canvas-wrapper,
+.schematic-canvas-wrapper:focus,
+.schematic-canvas-wrapper:focus-visible,
+.schematic-svg,
+.schematic-svg:focus,
+.schematic-svg:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Base Airframe Geometry */
+.airframe-base .airframe-wing,
+.airframe-base .airframe-tail,
+.airframe-base .airframe-fuselage {
+  fill: var(--schematic-airframe-fill);
+  stroke: var(--schematic-airframe-stroke);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+.airframe-base .airframe-fin {
+  fill: var(--schematic-airframe-stroke);
+  stroke: var(--schematic-airframe-stroke);
+  stroke-width: 1px;
+}
+
+.airframe-base .airframe-cockpit {
+  fill: var(--schematic-cockpit);
+  stroke: var(--schematic-cockpit-stroke);
+  stroke-width: 1.5px;
+}
+
+.airframe-base .airframe-cockpit-divider {
+  stroke: var(--schematic-airframe-stroke);
+  stroke-width: 1.5px;
+}
+
+.airframe-base .airframe-centerline {
+  stroke: var(--schematic-airframe-accent);
+  stroke-width: 1.5px;
+  stroke-dasharray: 6 4;
+  opacity: 0.65;
+}
+
+/* Interactive Component Regions */
+.schematic-region {
+  cursor: pointer;
+  outline: none;
+  transition: filter 0.15s ease, opacity 0.15s ease;
+}
+
+.schematic-region:hover {
+  filter: brightness(1.12);
+}
+
+/* Visible focus ring retained on each keyboard-focusable region */
+.schematic-region:focus-visible {
+  outline: 3px dashed var(--schematic-focus-outline) !important;
+  outline-offset: 4px;
+}
+
+.schematic-region.is-selected {
+  outline: 3px solid var(--schematic-selected-outline) !important;
+  outline-offset: 4px;
+  filter: drop-shadow(0 0 8px var(--schematic-selected-glow));
+}
+
+/* Region Labels and Badges */
+.region-label-group {
+  pointer-events: none;
+}
+
+.label-bg {
+  fill: var(--schematic-card-bg);
+  stroke: var(--schematic-border);
+  stroke-width: 1.5px;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.16));
+}
+
+.region-label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  fill: var(--schematic-text);
+  letter-spacing: 0.02em;
+}
+
+.label-leader {
+  stroke: var(--schematic-airframe-stroke);
+  stroke-width: 1.5px;
+  stroke-dasharray: 4 3;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.schematic-badge .badge-bg {
+  stroke-width: 1.5px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.12));
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+.schematic-badge .badge-text {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* Hydraulic Line Styling */
+.hydraulic-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.2s ease;
+}
+
+.hydraulic-line.primary {
+  stroke-width: 3px;
+}
+
+.hydraulic-line.secondary {
+  stroke-width: 2.2px;
+  stroke-dasharray: 5 3;
+}
+
+/* ------------------------------------------------------------ */
+/* Status Color Variant Styles (Section 12.4 Evidence Strength) */
+/* ------------------------------------------------------------ */
+
+/* STATUS: RED (Strong documented evidence - open briefing) */
+.schematic-region.status-red .fuel-tank-surface,
+.schematic-region.status-red .flap-surface,
+.schematic-region.status-red .engine-body,
+.schematic-region.status-red .gear-bay {
+  fill: var(--color-status-red-bg);
+  stroke: var(--color-status-red-stroke);
+  stroke-width: 2.5px;
+}
+.schematic-region.status-red .hydraulic-line {
+  stroke: var(--color-status-red);
+}
+.schematic-region.status-red .hydraulic-manifold,
+.schematic-region.status-red .hydraulic-pump,
+.schematic-region.status-red .hydraulic-node {
+  fill: var(--color-status-red);
+  stroke: var(--color-status-red-stroke);
+  stroke-width: 1.5px;
+}
+.schematic-region.status-red .gear-tire,
+.schematic-region.status-red .gear-strut,
+.schematic-region.status-red .gear-axle {
+  stroke: var(--color-status-red-stroke);
+  fill: var(--color-status-red);
+}
+.schematic-region.status-red .engine-intake,
+.schematic-region.status-red .engine-pylon,
+.schematic-region.status-red .engine-exhaust,
+.schematic-region.status-red .flap-track,
+.schematic-region.status-red .fuel-baffle {
+  stroke: var(--color-status-red-stroke);
+  fill: var(--color-status-red-bg);
+}
+.schematic-region.status-red .badge-bg {
+  fill: var(--color-status-red);
+  stroke: var(--color-status-red-stroke);
+}
+.schematic-region.status-red .badge-text {
+  fill: var(--color-status-red-badge-text);
+}
+.schematic-region.status-red .label-bg {
+  stroke: var(--color-status-red);
+}
+
+/* STATUS: AMBER (Mixed or contradictory evidence) */
+.schematic-region.status-amber .fuel-tank-surface,
+.schematic-region.status-amber .flap-surface,
+.schematic-region.status-amber .engine-body,
+.schematic-region.status-amber .gear-bay {
+  fill: var(--color-status-amber-bg);
+  stroke: var(--color-status-amber-stroke);
+  stroke-width: 2.5px;
+}
+.schematic-region.status-amber .hydraulic-line {
+  stroke: var(--color-status-amber);
+}
+.schematic-region.status-amber .hydraulic-manifold,
+.schematic-region.status-amber .hydraulic-pump,
+.schematic-region.status-amber .hydraulic-node {
+  fill: var(--color-status-amber);
+  stroke: var(--color-status-amber-stroke);
+  stroke-width: 1.5px;
+}
+.schematic-region.status-amber .gear-tire,
+.schematic-region.status-amber .gear-strut,
+.schematic-region.status-amber .gear-axle {
+  stroke: var(--color-status-amber-stroke);
+  fill: var(--color-status-amber);
+}
+.schematic-region.status-amber .engine-intake,
+.schematic-region.status-amber .engine-pylon,
+.schematic-region.status-amber .engine-exhaust,
+.schematic-region.status-amber .flap-track,
+.schematic-region.status-amber .fuel-baffle {
+  stroke: var(--color-status-amber-stroke);
+  fill: var(--color-status-amber-bg);
+}
+.schematic-region.status-amber .badge-bg {
+  fill: var(--color-status-amber);
+  stroke: var(--color-status-amber-stroke);
+}
+.schematic-region.status-amber .badge-text {
+  fill: var(--color-status-amber-badge-text);
+}
+.schematic-region.status-amber .label-bg {
+  stroke: var(--color-status-amber);
+}
+
+/* STATUS: BLUE (Historical or reference evidence - reserved) */
+.schematic-region.status-blue .fuel-tank-surface,
+.schematic-region.status-blue .flap-surface,
+.schematic-region.status-blue .engine-body,
+.schematic-region.status-blue .gear-bay {
+  fill: var(--color-status-blue-bg);
+  stroke: var(--color-status-blue-stroke);
+  stroke-width: 2.5px;
+}
+.schematic-region.status-blue .hydraulic-line {
+  stroke: var(--color-status-blue);
+}
+.schematic-region.status-blue .hydraulic-manifold,
+.schematic-region.status-blue .hydraulic-pump,
+.schematic-region.status-blue .hydraulic-node {
+  fill: var(--color-status-blue);
+  stroke: var(--color-status-blue-stroke);
+  stroke-width: 1.5px;
+}
+.schematic-region.status-blue .gear-tire,
+.schematic-region.status-blue .gear-strut,
+.schematic-region.status-blue .gear-axle {
+  stroke: var(--color-status-blue-stroke);
+  fill: var(--color-status-blue);
+}
+.schematic-region.status-blue .engine-intake,
+.schematic-region.status-blue .engine-pylon,
+.schematic-region.status-blue .engine-exhaust,
+.schematic-region.status-blue .flap-track,
+.schematic-region.status-blue .fuel-baffle {
+  stroke: var(--color-status-blue-stroke);
+  fill: var(--color-status-blue-bg);
+}
+.schematic-region.status-blue .badge-bg {
+  fill: var(--color-status-blue);
+  stroke: var(--color-status-blue-stroke);
+}
+.schematic-region.status-blue .badge-text {
+  fill: var(--color-status-blue-badge-text);
+}
+.schematic-region.status-blue .label-bg {
+  stroke: var(--color-status-blue);
+}
+
+/* STATUS: GREEN (Verified documented corrective action ONLY - reserved) */
+.schematic-region.status-green .fuel-tank-surface,
+.schematic-region.status-green .flap-surface,
+.schematic-region.status-green .engine-body,
+.schematic-region.status-green .gear-bay {
+  fill: var(--color-status-green-bg);
+  stroke: var(--color-status-green-stroke);
+  stroke-width: 2.5px;
+}
+.schematic-region.status-green .hydraulic-line {
+  stroke: var(--color-status-green);
+}
+.schematic-region.status-green .hydraulic-manifold,
+.schematic-region.status-green .hydraulic-pump,
+.schematic-region.status-green .hydraulic-node {
+  fill: var(--color-status-green);
+  stroke: var(--color-status-green-stroke);
+  stroke-width: 1.5px;
+}
+.schematic-region.status-green .gear-tire,
+.schematic-region.status-green .gear-strut,
+.schematic-region.status-green .gear-axle {
+  stroke: var(--color-status-green-stroke);
+  fill: var(--color-status-green);
+}
+.schematic-region.status-green .engine-intake,
+.schematic-region.status-green .engine-pylon,
+.schematic-region.status-green .engine-exhaust,
+.schematic-region.status-green .flap-track,
+.schematic-region.status-green .fuel-baffle {
+  stroke: var(--color-status-green-stroke);
+  fill: var(--color-status-green-bg);
+}
+.schematic-region.status-green .badge-bg {
+  fill: var(--color-status-green);
+  stroke: var(--color-status-green-stroke);
+}
+.schematic-region.status-green .badge-text {
+  fill: var(--color-status-green-badge-text);
+}
+.schematic-region.status-green .label-bg {
+  stroke: var(--color-status-green);
+}
+
+/* STATUS: GRAY (Insufficient evidence or not assessed - DEFAULT BASELINE) */
+.schematic-region.status-gray .fuel-tank-surface,
+.schematic-region.status-gray .flap-surface,
+.schematic-region.status-gray .engine-body,
+.schematic-region.status-gray .gear-bay {
+  fill: var(--color-status-gray-bg);
+  stroke: var(--color-status-gray-stroke);
+  stroke-width: 2.2px;
+}
+.schematic-region.status-gray .hydraulic-line {
+  stroke: var(--color-status-gray);
+}
+.schematic-region.status-gray .hydraulic-manifold,
+.schematic-region.status-gray .hydraulic-pump,
+.schematic-region.status-gray .hydraulic-node {
+  fill: var(--color-status-gray);
+  stroke: var(--color-status-gray-stroke);
+  stroke-width: 1.5px;
+}
+.schematic-region.status-gray .gear-tire,
+.schematic-region.status-gray .gear-strut,
+.schematic-region.status-gray .gear-axle {
+  stroke: var(--color-status-gray-stroke);
+  fill: var(--color-status-gray);
+}
+.schematic-region.status-gray .engine-intake,
+.schematic-region.status-gray .engine-pylon,
+.schematic-region.status-gray .engine-exhaust,
+.schematic-region.status-gray .flap-track,
+.schematic-region.status-gray .fuel-baffle {
+  stroke: var(--color-status-gray-stroke);
+  fill: var(--color-status-gray-bg);
+}
+.schematic-region.status-gray .badge-bg {
+  fill: var(--color-status-gray);
+  stroke: var(--color-status-gray-stroke);
+}
+.schematic-region.status-gray .badge-text {
+  fill: var(--color-status-gray-badge-text);
+}
+.schematic-region.status-gray .label-bg {
+  stroke: var(--color-status-gray);
+}
+
+/* Hover Tooltip */
+.schematic-tooltip {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  background: var(--schematic-card-bg);
+  color: var(--schematic-text);
+  border: 2px solid var(--schematic-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  z-index: 50;
+  max-width: 300px;
+}
+
+.schematic-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip-title {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.tooltip-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.tooltip-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.tooltip-dot.red { background: var(--color-status-red); }
+.tooltip-dot.amber { background: var(--color-status-amber); }
+.tooltip-dot.blue { background: var(--color-status-blue); }
+.tooltip-dot.green { background: var(--color-status-green); }
+.tooltip-dot.gray { background: var(--color-status-gray); }
+
+.tooltip-count {
+  font-size: 11px;
+  color: var(--schematic-text-muted);
+}
+
+/* Evidence Strength Legend (Full visibility, no clipped text) */
+.schematic-legend {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--schematic-card-bg);
+  border: 2px solid var(--schematic-border);
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: visible;
+}
+
+.legend-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--schematic-border);
+  padding-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.legend-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--schematic-text);
+}
+
+.legend-subtitle {
+  font-size: 12px;
+  color: var(--schematic-text-muted);
+}
+
+.legend-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--schematic-text);
+  line-height: 1.45;
+  word-break: normal;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.legend-swatch.status-red { background: var(--color-status-red); border: 1.5px solid var(--color-status-red-stroke); }
+.legend-swatch.status-amber { background: var(--color-status-amber); border: 1.5px solid var(--color-status-amber-stroke); }
+.legend-swatch.status-blue { background: var(--color-status-blue); border: 1.5px solid var(--color-status-blue-stroke); }
+.legend-swatch.status-green { background: var(--color-status-green); border: 1.5px solid var(--color-status-green-stroke); }
+.legend-swatch.status-gray { background: var(--color-status-gray); border: 1.5px solid var(--color-status-gray-stroke); }
+
+.legend-reserved-note {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--schematic-bg);
+  border: 1px solid var(--schematic-border);
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--schematic-text-muted);
+  line-height: 1.5;
+}
+
+.legend-swatch-inline {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin: 0 2px 0 6px;
+}
+.legend-swatch-inline.status-blue { background: var(--color-status-blue); border: 1px solid var(--color-status-blue-stroke); }
+.legend-swatch-inline.status-green { background: var(--color-status-green); border: 1px solid var(--color-status-green-stroke); }
+
+.legend-disclaimer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--schematic-border);
+  font-size: 11.5px;
+  color: var(--schematic-text-muted);
+  line-height: 1.45;
+}
+
+/* ============================================================ */
+/* SECTION: C9 Dashboard Shell & Panels Styles                  */
+/* ============================================================ */
+
+/* Global Dashboard Layout */
+body.dashboard-body {
+  margin: 0;
+  padding: 0;
+  background: var(--schematic-bg, #f8fafc);
+  color: var(--schematic-text, #0f172a);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.45;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* App Header & Navigation Bar */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  background: var(--schematic-card-bg, #ffffff);
+  border-bottom: 1px solid var(--schematic-border, #cbd5e1);
+  flex-shrink: 0;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.brand-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.brand-subtitle {
+  margin: 2px 0 0 0;
+  font-size: 11.5px;
+  color: var(--schematic-text-muted, #64748b);
+}
+
+.header-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.tab-btn {
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  background: transparent;
+  color: var(--schematic-text, #0f172a);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tab-btn:hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.tab-btn.is-active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+/* Persistent Limitations Top Notice */
+.persistent-banner {
+  background: rgba(217, 119, 6, 0.12);
+  border-bottom: 1px solid rgba(217, 119, 6, 0.35);
+  color: #92400e;
+  padding: 7px 24px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .persistent-banner {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.15);
+}
+
+.persistent-icon {
+  font-size: 14px;
+}
+
+/* Main Dashboard Workspace 3-Column Grid (Airplane Schematic Prioritized) */
+.dashboard-workspace {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 280px 1.9fr 1.25fr;
+  gap: 16px;
+  padding: 16px 20px;
+  overflow: hidden;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1280px) {
+  .dashboard-workspace {
+    grid-template-columns: 260px 1.7fr 1.2fr;
+    gap: 12px;
+    padding: 12px;
+  }
+}
+
+.panel-column {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Left Controls Panel */
+.left-controls-panel {
+  overflow-y: auto;
+}
+
+.controls-card {
+  background: var(--schematic-card-bg, #ffffff);
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Error Banner for /api/cases in Real Mode */
+.cases-error-banner {
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid #ef4444;
+  color: #991b1b;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+[data-theme="dark"] .cases-error-banner {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.18);
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.checkbox-control-group {
+  margin-top: -2px;
+  margin-bottom: 2px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--schematic-text, #0f172a);
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  accent-color: #2563eb;
+}
+
+.control-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--schematic-text-muted, #475569);
+}
+
+.control-help {
+  font-size: 11px;
+  color: var(--schematic-text-muted, #64748b);
+  line-height: 1.35;
+}
+
+.control-grid-row {
+  display: flex;
+  gap: 8px;
+}
+
+.col-half {
+  flex: 1;
+}
+
+.form-select,
+.form-input,
+.form-textarea {
+  padding: 7px 9px;
+  border-radius: 6px;
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  background: var(--schematic-bg, #f8fafc);
+  color: var(--schematic-text, #0f172a);
+  font-size: 12.5px;
+  font-family: inherit;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-input-readonly {
+  background: rgba(100, 116, 139, 0.12);
+  cursor: default;
+  color: var(--schematic-text-muted, #475569);
+  font-weight: 700;
+}
+
+.form-textarea {
+  resize: vertical;
+  line-height: 1.4;
+}
+
+/* Component List with Tagged Passage Counts */
+.component-list-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: var(--schematic-bg, #f8fafc);
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.component-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 9px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.component-list-item:hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.component-list-item.is-active {
+  background: rgba(37, 99, 235, 0.16);
+  font-weight: 700;
+  border-left: 3px solid #2563eb;
+}
+
+.comp-name {
+  text-transform: capitalize;
+}
+
+.comp-badge {
+  font-size: 10.5px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: rgba(100, 116, 139, 0.16);
+  color: var(--schematic-text-muted, #475569);
+  font-weight: 600;
+}
+
+.comp-badge.badge-unsupported {
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* Actions and Buttons */
+.control-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  transition: all 0.15s ease;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--schematic-card-bg, #ffffff);
+  color: var(--schematic-text, #0f172a);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-sm {
+  padding: 3px 8px;
+  font-size: 11px;
+}
+
+.analyze-timer {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #d97706;
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+  background: rgba(217, 119, 6, 0.1);
+}
+
+/* Center Schematic Panel */
+.center-schematic-panel {
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.schematic-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-shrink: 0;
+}
+
+.schematic-view-title {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.schematic-instructions {
+  font-size: 11.5px;
+  color: var(--schematic-text-muted, #64748b);
+}
+
+.schematic-canvas-container {
+  background: var(--schematic-card-bg, #ffffff);
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.schematic-canvas-container .schematic-svg {
+  max-height: 640px;
+}
+
+/* Badge width rule for 'no curated evidence yet' */
+.schematic-region[data-count="no curated evidence yet"] .badge-bg {
+  x: -68px;
+  width: 136px;
+}
+
+.schematic-region[data-count="no curated evidence yet"] .badge-text {
+  font-size: 9.5px;
+}
+
+.schematic-legend-card {
+  background: var(--schematic-card-bg, #ffffff);
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  flex-shrink: 0;
+}
+
+.legend-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--schematic-border, #cbd5e1);
+  padding-bottom: 4px;
+}
+
+.legend-card-title {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.legend-card-subtitle {
+  font-size: 11px;
+  color: var(--schematic-text-muted, #64748b);
+}
+
+.legend-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 6px;
+}
+
+.legend-pill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.legend-pill-text strong {
+  display: block;
+}
+
+.legend-pill-text span {
+  color: var(--schematic-text-muted, #64748b);
+  font-size: 10.5px;
+}
+
+/* Right Briefing and Evaluation Panel */
+.right-briefing-panel {
+  background: var(--schematic-card-bg, #ffffff);
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.briefing-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  min-height: 0;
+}
+
+.briefing-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.briefing-header-block {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--schematic-border, #cbd5e1);
+}
+
+.briefing-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.briefing-title-row h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.briefing-summary-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--schematic-text, #0f172a);
+}
+
+.persistent-notice {
+  background: rgba(217, 119, 6, 0.1);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 11.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #92400e;
+}
+
+[data-theme="dark"] .persistent-notice {
+  color: #fbbf24;
+}
+
+/* Status Chips */
+.status-chip {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.chip-red { background: var(--color-status-red); color: #ffffff; }
+.chip-amber { background: var(--color-status-amber); color: #ffffff; }
+.chip-blue { background: var(--color-status-blue); color: #ffffff; }
+.chip-green { background: var(--color-status-green); color: #ffffff; }
+.chip-gray { background: var(--color-status-gray); color: #ffffff; }
+
+/* Badges for roles and hypotheses */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.badge-model-hypothesis {
+  background: #6b21a8;
+  color: #ffffff;
+  border: 1px solid #581c87;
+}
+
+.badge-role-official {
+  background: #991b1b;
+  color: #ffffff;
+  border: 1px solid #7f1d1d;
+}
+
+.badge-role-observation {
+  background: #1e40af;
+  color: #ffffff;
+  border: 1px solid #1e3a8a;
+}
+
+.badge-role-guidance {
+  background: #0f766e;
+  color: #ffffff;
+  border: 1px solid #115e59;
+}
+
+.badge-role-recommendation {
+  background: #b45309;
+  color: #ffffff;
+  border: 1px solid #92400e;
+}
+
+.badge-role-corrective {
+  background: #15803d;
+  color: #ffffff;
+  border: 1px solid #166534;
+}
+
+.badge-role-spoken {
+  background: #7c2d12;
+  color: #ffffff;
+  border: 1px solid #701a75;
+}
+
+.badge-role-inference {
+  background: #374151;
+  color: #ffffff;
+  border: 1px solid #1f2937;
+}
+
+.badge-role-default {
+  background: #475569;
+  color: #ffffff;
+}
+
+.badge-needs-review {
+  background: rgba(220, 38, 38, 0.15);
+  color: #b91c1c;
+  border: 1px solid #ef4444;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Cards: Hypotheses, Findings, Checks */
+.panel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--schematic-text-muted, #475569);
+  border-bottom: 1px solid var(--schematic-border, #cbd5e1);
+  padding-bottom: 4px;
+}
+
+.hypothesis-card,
+.finding-card,
+.check-card {
+  background: var(--schematic-bg, #f8fafc);
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hypothesis-meta-row,
+.finding-header-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.hypothesis-status-pill {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(100, 116, 139, 0.16);
+  color: var(--schematic-text, #0f172a);
+}
+
+.hypothesis-id {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--schematic-text-muted, #64748b);
+  margin-left: auto;
+}
+
+.hypothesis-statement,
+.finding-statement {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--schematic-text, #0f172a);
+}
+
+.hypothesis-detail-group,
+.evidence-subgroup {
+  font-size: 12px;
+}
+
+.detail-label {
+  font-weight: 700;
+  color: var(--schematic-text-muted, #475569);
+}
+
+.contradiction-label {
+  color: #dc2626;
+}
+
+.hypothesis-reasoning {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: var(--schematic-text, #0f172a);
+}
+
+.citation-list,
+.missing-info-list,
+.limitations-list {
+  margin: 4px 0 0 0;
+  padding-left: 18px;
+  font-size: 12px;
+}
+
+.citation-item {
+  margin-bottom: 3px;
+}
+
+.citation-link {
+  color: #2563eb;
+  font-family: monospace;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.citation-link:hover {
+  color: #1d4ed8;
+}
+
+.citation-quote-preview {
+  color: var(--schematic-text-muted, #64748b);
+  font-style: italic;
+  font-size: 11.5px;
+  margin-left: 4px;
+}
+
+.finding-quote {
+  margin: 4px 0 0 0;
+  padding-left: 10px;
+  border-left: 3px solid #2563eb;
+  font-style: italic;
+  font-size: 12px;
+  color: var(--schematic-text-muted, #475569);
+}
+
+.check-instruction,
+.check-rationale,
+.check-citations {
+  margin: 0;
+  font-size: 12px;
+}
+
+.check-safety-alert {
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.35);
+  color: #991b1b;
+  font-size: 11.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+[data-theme="dark"] .check-safety-alert {
+  color: #f87171;
+}
+
+.safety-icon {
+  font-size: 13px;
+}
+
+.limitations-banner {
+  background: rgba(100, 116, 139, 0.12);
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.limitations-title {
+  margin: 0 0 6px 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--schematic-text, #0f172a);
+}
+
+/* Empty, Error, and Baseline Cards */
+.error-card {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid #ef4444;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.error-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.error-badge {
+  font-weight: 700;
+  color: #dc2626;
+  font-size: 12px;
+}
+
+.error-step {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--schematic-text-muted, #64748b);
+}
+
+.error-message {
+  margin: 0;
+  font-size: 13px;
+  color: #991b1b;
+}
+
+.empty-evidence-card,
+.initial-prompt-card,
+.baseline-card {
+  background: var(--schematic-bg, #f8fafc);
+  border: 1px dashed var(--schematic-border, #cbd5e1);
+  border-radius: 6px;
+  padding: 16px;
+  text-align: center;
+}
+
+.empty-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.baseline-title {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--schematic-text, #0f172a);
+}
+
+.baseline-raw-output {
+  margin-top: 10px;
+  text-align: left;
+  background: var(--schematic-card-bg, #ffffff);
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  border-radius: 4px;
+  padding: 12px;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.baseline-raw-output pre,
+.baseline-text {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  color: var(--schematic-text, #0f172a);
+}
+
+/* Citation Drawer / Modal */
+.citation-drawer {
+  position: fixed;
+  top: 0;
+  right: -520px;
+  width: 480px;
+  max-width: 90vw;
+  height: 100vh;
+  background: var(--schematic-card-bg, #ffffff);
+  box-shadow: -6px 0 24px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: right 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--schematic-border, #cbd5e1);
+  box-sizing: border-box;
+}
+
+.citation-drawer.is-open {
+  right: 0;
+}
+
+.drawer-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--schematic-border, #cbd5e1);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.drawer-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 85%;
+}
+
+.drawer-passage-id {
+  font-family: monospace;
+  font-size: 11px;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.drawer-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.drawer-meta-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.meta-pill {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--schematic-bg, #f8fafc);
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  color: var(--schematic-text-muted, #475569);
+}
+
+.btn-close-drawer {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--schematic-text-muted, #64748b);
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-close-drawer:hover {
+  color: var(--schematic-text, #0f172a);
+}
+
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+
+.drawer-review-alert {
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  color: #b91c1c;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.drawer-section-title {
+  margin: 0 0 6px 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--schematic-text-muted, #475569);
+}
+
+.citation-excerpt {
+  background: var(--schematic-bg, #f8fafc);
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  border-radius: 6px;
+  padding: 14px;
+  font-size: 13px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.citation-highlight {
+  background: #fef08a;
+  color: #854d0e;
+  font-weight: 700;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.quote-lookup-notice {
+  background: rgba(37, 99, 235, 0.1);
+  border-left: 3px solid #2563eb;
+  padding: 6px 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.drawer-source-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Bottom Metrics Strip */
+.app-metrics-footer {
+  background: var(--schematic-card-bg, #ffffff);
+  border-top: 1px solid var(--schematic-border, #cbd5e1);
+  padding: 8px 24px;
+  flex-shrink: 0;
+}
+
+.metrics-footer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.metrics-strip-title {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--schematic-text-muted, #475569);
+}
+
+.metrics-strip-note {
+  font-size: 10.5px;
+  color: var(--schematic-text-muted, #64748b);
+}
+
+.metrics-grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 90px;
+}
+
+.metric-label {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--schematic-text-muted, #64748b);
+  letter-spacing: 0.03em;
+}
+
+.metric-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--schematic-text, #0f172a);
+}
+
+.metric-value.model-name {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Evaluation Tab View */
+.evaluation-panel {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.evaluation-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.evaluation-subtext {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  color: var(--schematic-text-muted, #64748b);
+}
+
+.runs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.runs-table th {
+  padding: 6px 8px;
+  background: var(--schematic-bg, #f8fafc);
+  border-bottom: 2px solid var(--schematic-border, #cbd5e1);
+  text-align: left;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  color: var(--schematic-text-muted, #475569);
+}
+
+.runs-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--schematic-border, #cbd5e1);
+}
+
+.run-label-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11px;
+  background: var(--schematic-border, #cbd5e1);
+}
+
+.verif-chip {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.verif-verified { background: rgba(220, 38, 38, 0.2); color: #166534; }
+.verif-partial { background: rgba(217, 119, 6, 0.2); color: #92400e; }
+.verif-unverified { background: rgba(100, 116, 139, 0.2); color: #475569; }
+.verif-error { background: rgba(220, 38, 38, 0.2); color: #991b1b; }
+
+.reveal-prompt-card {
+  background: var(--schematic-bg, #f8fafc);
+  border: 1px dashed var(--schematic-border, #cbd5e1);
+  border-radius: 6px;
+  padding: 16px;
+  text-align: center;
+}
+
+.reveal-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.reveal-card {
+  background: var(--schematic-bg, #f8fafc);
+  border: 1px solid var(--schematic-border, #cbd5e1);
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.official-conclusion-card {
+  border-left: 4px solid #991b1b;
+}
+
+.prediction-card {
+  border-left: 4px solid #2563eb;
+}
+
+.reveal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--schematic-border, #cbd5e1);
+}
+
+.reveal-header h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.reveal-body {
+  flex: 1;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.reveal-footer {
+  margin-top: 8px;
+  padding-top: 4px;
+  font-size: 10.5px;
+  color: var(--schematic-text-muted, #64748b);
+  border-top: 1px dashed var(--schematic-border, #cbd5e1);
+}
+
+/* Self-Test Verdict Banner */
+.selftest-slot {
+  flex-shrink: 0;
+}
+
+.selftest-banner {
+  margin: 10px 20px 0 20px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.selftest-banner.pass {
+  background: rgba(22, 163, 74, 0.12);
+  border: 2px solid #16a34a;
+  color: #166534;
+}
+
+.selftest-banner.fail {
+  background: rgba(220, 38, 38, 0.12);
+  border: 2px solid #dc2626;
+  color: #991b1b;
+}
+
+.selftest-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.selftest-status-pill {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.status-pass {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.status-fail {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.selftest-title {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.selftest-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.selftest-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.selftest-check.pass {
+  color: #16a34a;
+  font-weight: 800;
+}
+
+.selftest-check.fail {
+  color: #dc2626;
+  font-weight: 800;
+}
+
+.selftest-reasons {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #991b1b;
+}
+
+/* Visibility Utilities */
+.is-hidden {
+  display: none !important;
+}
+
+.font-mono {
+  font-family: monospace;
+}
+
+/* ============================================================
+   COMPONENT C3b: Evolus Document Overview & Facts Tree Styles
+   Distinct neutral style; clearly different from Official Finding & Model hypothesis
+   ============================================================ */
+
+.evolus-panel-section {
+  margin-bottom: 16px;
+}
+
+.evolus-overview-card {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.evolus-overview-summary {
+  padding: 10px 14px;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  font-size: 13px;
+  color: #334155;
+  transition: background-color 0.15s ease;
+}
+
+.evolus-overview-summary:hover {
+  background: #e2e8f0;
+}
+
+.evolus-card-title {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.evolus-card-subtitle {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: normal;
+}
+
+.evolus-overview-body {
+  padding: 12px 14px;
+}
+
+.evolus-summary-section {
+  margin-bottom: 12px;
+}
+
+.evolus-bullets-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evolus-bullet-item {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #1e293b;
+}
+
+.evolus-bullet-text {
+  margin-right: 6px;
+}
+
+.evolus-figure-marker {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 1px 6px;
+  vertical-align: middle;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+
+.evolus-figure-marker.marker-verified {
+  background: #e2e8f0;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.evolus-figure-marker.marker-missing {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.evolus-facts-details {
+  margin-top: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.evolus-facts-summary {
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #334155;
+}
+
+.evolus-facts-summary:hover {
+  background: #f1f5f9;
+}
+
+.facts-summary-title {
+  color: #1e293b;
+}
+
+.evolus-facts-counter {
+  color: #64748b;
+  font-weight: normal;
+  font-size: 11px;
+}
+
+.evolus-tree-container {
+  padding: 10px 12px;
+  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #fafafa;
+}
+
+.tree-dict {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 1px solid #e2e8f0;
+}
+
+.tree-row {
+  display: flex;
+  gap: 6px;
+  margin: 3px 0;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.tree-key {
+  font-weight: 600;
+  color: #0369a1;
+}
+
+.tree-val {
+  margin: 0;
+  color: #334155;
+  flex: 1;
+}
+
+.tree-list {
+  margin: 0 0 0 12px;
+  padding: 0;
+  list-style: none;
+  border-left: 1px solid #e2e8f0;
+}
+
+.tree-list-item {
+  margin: 2px 0;
+  padding-left: 6px;
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.tree-index {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.tree-value {
+  color: #0f172a;
+}
+
+.tree-null, .tree-empty {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.evolus-fixed-note {
+  font-size: 11px;
+  font-style: italic;
+  color: #64748b;
+  margin: 12px 0 0 0;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+  line-height: 1.45;
+}
+
+/* Dark mode overrides for Evolus overview */
+[data-theme="dark"] .evolus-overview-card {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .evolus-overview-summary {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .evolus-overview-summary:hover {
+  background: #334155;
+}
+
+[data-theme="dark"] .evolus-card-title {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .evolus-bullet-item {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .evolus-figure-marker.marker-verified {
+  background: #334155;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+[data-theme="dark"] .evolus-figure-marker.marker-missing {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+  border-color: #b45309;
+}
+
+[data-theme="dark"] .evolus-facts-details {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .evolus-facts-summary {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .facts-summary-title {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .evolus-tree-container {
+  background: #0b1120;
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .tree-dict,
+[data-theme="dark"] .tree-list {
+  border-color: #334155;
+}
+
+[data-theme="dark"] .tree-key {
+  color: #38bdf8;
+}
+
+[data-theme="dark"] .tree-val,
+[data-theme="dark"] .tree-value {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .evolus-fixed-note {
+  color: #94a3b8;
+  border-color: #334155;
+}
+

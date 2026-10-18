@@ -1,0 +1,236 @@
+{
+  "pack_id": "pack_case_demo_01_landing_gear_B_92e535927e51",
+  "case_id": "case_demo_01",
+  "component_id": "landing_gear",
+  "question": "For Alaska Airlines flight 1288 (Boeing 737-800, N516AS, Santa Ana, California, August 20, 2023), what caused the left main landing gear collapse, and what remains unknown?",
+  "created_at": "2026-10-18T07:16:41Z",
+  "token_budget": 8000,
+  "approx_tokens": 7986,
+  "passages": [
+    {
+      "passage_id": "doc1-p1-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 1,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 3 of 13 DCA23FA417\nFactual Information\nHistory of Flight\nLanding Sys/Comp malf/fail (non-power) (Defining event)\nLanding Landing gear collapse\nOn August 20, 2023, about 2315 Pacific daylight time (PDT), Alaska Airlines flight 1288, a Boeing \n737-800, N516AS, sustained substantial damage when the left MLG collapsed after landing on \nrunway 20R at John Wayne-Orange County Airport (SNA), Santa Ana, California. The 112 \npassengers and crewmembers evacuated the airplane via stairs onto a taxiway with no injuries \nreported. The flight was operating under the provisions of Title 14 Code of Federal Regulations \nPart 121 as a scheduled domestic passenger flight from Seattle, Washington, to SNA. The flight crewmembers reported that, before the final approach fix, the airplane was fully \nconfigured for landing and on a stabilized approach and that the before landing checklist was \ncompleted. Moderate rain, shifting wind, light turbulence, and instrument meteorological \nconditions were encountered as the airplane descended toward the airport. About 800 ft above \nground level, the flight crew visually acquired the runway, and the captain, who was the pilot \nflying, disengaged the autopilot and autothrottle. The airplane was aligned with the glidepath \nwhen crossing the runway threshold. The flight crew noted that all the landing gear position \nindicator lights were green, indicating both MLG and the nose gear were in their down and locked \nposition."
+    },
+    {
+      "passage_id": "doc3-p6-0",
+      "document_title": "Aviation Investigation Final Report - American Airlines Flight 3023 (Comparison Case)",
+      "page_number": 6,
+      "source_url": "https://data.ntsb.gov/carol-repgen/api/Aviation/ReportMain/GenerateNewestReport/200663/pdf",
+      "evidence_role": "observation",
+      "text": "Page 6 of 11 DCA25LA275 \n \n \nwheel showed no evidence of the thermal relief plugs remaining. A thermal relief plug \nrecovered from the runway showed that the center meltable portion was missing. \n \n \n \n \nProbable Cause and Findings \nThe National Transportation Safety Board determines the probable cause(s) of this accident to be: \n \nThe failure of the airplane\u2019s left main landing gear tires and wheels during the takeoff roll due \nto the thermal relief plugs melting and releasing tire pressure, which resulted in abnormal \nairplane handling characteristics and led the flight crew to reject the takeoff at high speed. \n \n \nFindings \nAircraft Wheel/ski/float - Failure \nAircraft Tire casing - Failure"
+    },
+    {
+      "passage_id": "doc1-p1-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 1,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Flight data recorder (FDR) data showed that, at 2314:57, the MLG touched down, and the nose \ngear touched down about 1 second later. The maximum vertical acceleration recorded at \ntouchdown was about 1.71 G. The thrust reverser and spoiler deployment occurred normally. According to the captain, the touchdown had a \u201cfirm jolt feeling,\u201d and the airplane was \u201cpulling \nreasonably hard\u201d to the left. The captain overcame the left veer with rudder pedal input, and the \nairplane tracked the runway centerline. The captain thought that the tire on the left MLG was \nflat. The first officer (FO), who was the pilot monitoring, completed the after landing procedures, \nwhich included bringing the auxiliary power unit (APU) online. The captain slowed the airplane \nto taxi speed, and the airplane exited the runway onto a taxiway. After the airplane turned onto \nthe taxiway, the crew noticed that the airplane was leaning to the left. FDR data indicated that \nthe airplane came to rest at a roll attitude that was about 5\u00b0 left. The captain stopped the airplane on the taxiway, set the parking brake, and opened his cockpit \nwindow to observe the airplane. He saw that the airplane was resting on its left engine cowling \n(see figure 1); as a result, he immediately shut down the left engine. Inside the cockpit, the \ncaptain noted that the left MLG green position indicator light had extinguished, whereas the nose"
+    },
+    {
+      "passage_id": "doc1-p10-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 10,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 12 of 13 DCA23FA417\nspeed 36 knots, left main landing gear aft trunnion pin broke and aircraft started deviating \nto the left of center line. The aircraft came to stop on\nrunway with damage to the LH landing gear and resting on LH engine. March 3, 2016 - Jet Airways Boeing 737-900, VT-JGD:\nWhile operating scheduled domestic passenger flight 9W-354 from Delhi to Mumbai with \n120 passengers and 8 crew on 03-03-2016 was involved in an accident at Chhatrapati \nShivaji International (CSI) Airport, Mumbai. The aircraft had safely landed on runway 27 \nat 16:22 UTC and was about to vacate the runway via taxiway N9 when the right main \nlanding gear collapsed. July 16, 2018 - Gol Airlines Boeing 737-800, PR-GGD:\nDuring landing, at the moment of touch, a loud noise was heard by the cabin crew. The \naircraft taxied by its own means to the apron, where passengers disembarked normally. When conducting the post-flight inspection, the maintenance team identified a leakage \nof hydraulic fluid and the breakdown of a component of the right main landing gear. December 22, 2019 - United Airlines Boeing 737-800, N87513\nThis accident occurred when the left main landing gear of a United Airlines Boeing 737-\n800 collapsed during the landing roll. Both flight crewmembers reported that the \nairplane had touched down smoothly on the runway centerline, but the first officer \nreported that he then felt the airplane \u201cshudder\u201d and tilt left wing down."
+    },
+    {
+      "passage_id": "doc1-p10-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 10,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Postaccident \nexamination found that the aft trunnion pin in the left main landing gear failed during the \nlanding due to a fatigue crack."
+    },
+    {
+      "passage_id": "doc1-p4-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 4,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 6 of 13 DCA23FA417\nAircraft and Owner/Operator Information \nAircraft Make: Boeing Registration: N516AS\nModel/Series: 737-890 Aircraft Category: Airplane\nYear of Manufacture: 2008 Amateur Built:\nAirworthiness Certificate: Normal Serial Number: 39044\nLanding Gear Type: Retractable - Tricycle Seats: 149\nDate/Type of Last \nInspection:\n Continuous airworthiness Certified Max Gross Wt.: 174700 lbs\nTime Since Last Inspection: Engines: 2 \nAirframe Total Time: 53207.34 Hrs at time of \naccident\nEngine Manufacturer:\nELT: Installed Engine Model/Series:\nRegistered Owner: WILMINGTON TRUST CO \nTRUSTEE\nRated Power:\nOperator: Alaska Airlines Operating Certificate(s) \nHeld:\nFlag carrier (121)\nThe left and right MLG absorb landing forces through the tire assembly and support most of the \nairplane's weight when on the ground. Each MLG also transmits the wheel braking forces to the \nairplane structure.\nA main gear shock strut provides the primary support for each MLG (see figure 2). The shock \nstrut consists of an integral drag strut, an outer cylinder, and an inner cylinder. When the MLG \nextends or retracts, the shock strut rotates about two trunnion bearings and two pins (forward \nand aft) at the top of the outer shock strut. The forward and aft trunnion pins extend through a \ntrunnion bearing and support assembly in the wing and landing gear beam. Trunnion bolts keep \nthe trunnion pins from backing out during landing gear operation."
+    },
+    {
+      "passage_id": "doc1-p5-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 5,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 7 of 13 DCA23FA417\nFigure 2. Illustration of the MLG components. (Source: Boeing. Image Copyright Boeing. Reproduced with permission.)\nAlaska Airlines' maintenance program indicated that the left and right MLG assemblies must be \noverhauled every 21,000 flight cycles or 10 years. Alaska Airlines\u2019 maintenance records showed \nthat the left MLG assembly, including the aft trunnion pin, had been overhauled by Sunvair Inc. in Valencia, California, on July 5, 2018. At that time, the landing gear assembly had accumulated \n11,116 flight cycles. According to documentation of the overhaul procedure, during the overhaul of the aft trunnion \npin the original chromium layer had been stripped from the trunnion pin by grinding its surface. After the removal of the chromium layer, a temper etch inspection and a magnetic particle \ninspection were completed. After these inspections and shot peening were completed, a new \nlayer of chromium electroplating was applied to the surface of the trunnion pin. The outer \ndiameter of the pin was then machined (by grinding) to achieve a specific diameter, and another \nmagnetic particle inspection was completed. The overhauled left MLG assembly was installed on the accident airplane on July 17, 2018. At \nthat time, the airplane had accumulated 11,144 flight cycles. At the time of the accident, the \nairplane had accumulated 53,207 flight hours and 15,854 flight cycles."
+    },
+    {
+      "passage_id": "doc1-p5-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 5,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "At the time of the accident, the \nairplane had accumulated 53,207 flight hours and 15,854 flight cycles. The landing gear had \nbeen installed on the airplane for 4,710 flight cycles since its installation in July 2018."
+    },
+    {
+      "passage_id": "doc1-p6-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 6,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "The inspection also found that the left \nMLG aft trunnion pin had fractured in half vertically across its diameter. One-half of the aft \ntrunnion pin remained within the spherical bearing of the rear landing gear beam, and the other"
+    },
+    {
+      "passage_id": "doc1-p7-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 7,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 9 of 13 DCA23FA417\nhalf remained in the outer cylinder of the MLG trunnion. The trunnion pin half that remained in \nthe landing gear beam spherical bearing had moved aft and was found protruding from the aft \nside of the bearing. The left MLG aft trunnion pin had fractured approximately perpendicular to the length of the pin \nat its midspan. The trunnion pin was extracted from the airplane for further examination. The aft \nsection of the pin was between 4.5 and 5.0 inches long, and the forward section of pin was \nbetween 5.25 and 6.0 inches long. The aft section of the trunnion pin was examined at Boeing\u2019s \nEquipment Quality Analysis (EQA) laboratory in Seattle, Washington with NTSB personnel \npresent. The forward section of the trunnion pin was removed from the aircraft over a month \nlater, and was sent to the NTSB Material Laboratory, where it was examined before bringing it to \nthe Boeing EQA lab for additional Barkhausen and temper etch inspections. The results of the \nexaminations at the NTSB Materials Lab and Boeing EQA lab are discussed below. Trunnion Pin \u2013 Aft Section\nWhen examined, the aft section of the trunnion pin was placed in approximately the same \norientation as it would be installed on the airplane. Visual examination showed that most of the \nfracture surface was rough with a dull gray luster, and many of its edges had small shear lips."
+    },
+    {
+      "passage_id": "doc1-p8-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 8,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Overall, the fracture features of the thumbnail crack were consistent with multiple crack \ninitiation sites along the facets of the intergranular region. These smaller cracks had \ncoalesced during early crack propagation, as evidenced by the ratchet marks in that portion of \nthe fatigue crack. Flight recorders\nThe event airplane was manufactured in 2008 and was operating such that it was required to be \nequipped with a flight data recorder (FDR) that recorded, at a minimum, 91 parameters, as cited \nin 14 CFR Part 121.344(f). The parameters evaluated for the purpose of this investigation \nappeared to be in accordance with federal FDR carriage requirements, except left brake pressure \n(Brake Press-LT) and right brake pressure (Brake Press-RT). For more detailed information, see \nthe Flight Data Recorder - Specialist\u2019s Factual Report located in the docket. The aircraft began its descent about 2245. During final approach, the airplane encountered a 60-\ndegree crosswind with a recorded windspeed reaching 43 knots before decreasing closer to \ntouchdown. At 2314:57, the MLG touched down, and the nose gear touched down 1 second later. The maximum vertical acceleration recorded at touchdown was about 1.71 g. The thrust \nreverser and spoiler deployment occurred normally, and the airplane came to rest with its left \nwing rolled about 5 degrees to the left."
+    },
+    {
+      "passage_id": "doc1-p9-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 9,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "These data indicate \nthat the fatigue crack had not been present at, or before, the part overhaul. Additional Information\nIn a review of National Transportation Safety Board investigations and assisted international \ninvestigations, there were four similar main landing gear trunnion pin failure accidents \ninvolving Boeing 737 aircraft. Those investigations were:\nApril 13, 2015 - Jet Airways Boeing 737-800, VT-JGA:\nJet Airways flight 9W-2423 (Delhi -Varanasi-Khajuraho\u2013Delhi) was involved in an accident \nat Khajuraho Airport at 0751 UTC. During landing Roll, 15 seconds after touchdown, at"
+    },
+    {
+      "passage_id": "doc1-p6-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 6,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 8 of 13 DCA23FA417\nMeteorological Information and Flight Plan\nConditions at Accident Site: Instrument (IMC) Condition of Light: Night\nObservation Facility, Elevation: ksna Distance from Accident Site: 0 Nautical Miles\nObservation Time: 11:05 Local Direction from Accident Site: 0\u00b0\nLowest Cloud Condition: Few / 1100 ft AGL Visibility 2 miles\nLowest Ceiling: Overcast / 1100 ft AGL Visibility (RVR):\nWind Speed/Gusts: 3 knots / Turbulence Type \nForecast/Actual:\nUnknown / Unknown\nWind Direction: Turbulence Severity \nForecast/Actual:\nLight / Light\nAltimeter Setting: 29.81 inches Hg Temperature/Dew Point: 21\u00b0C / 19\u00b0C\nPrecipitation and Obscuration:\nDeparture Point: Seattle, WA (SEA) Type of Flight Plan Filed: IFR\nDestination: Santa Ana, CA Type of Clearance: IFR\nDeparture Time: 20:36 Local Type of Airspace: Class C\nAirport Information\nAirport: John Wayne/Orange County Airport \nKSNA\nRunway Surface Type: Concrete\nAirport Elevation: 56 ft msl Runway Surface Condition: Wet\nRunway Used: 20R IFR Approach: ILS\nRunway Length/Width: 5700 ft / 150 ft VFR Approach/Landing: None\nWreckage and Impact Information \nCrew Injuries: 6 None Aircraft Damage: Substantial\nPassenger \nInjuries:\n106 None Aircraft Fire: None\nGround Injuries: Aircraft Explosion: None\nTotal Injuries: 112 None Latitude, \nLongitude:\n33.675701,-117.86799\nPost accident inspection found that the left MLG forward trunnion pin and its spherical bearing \nwere in place with no visible damage to the wing spar."
+    },
+    {
+      "passage_id": "doc1-p3-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 3,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 5 of 13 DCA23FA417\nPilot Information \nCertificate: Airline transport Age: 57\nAirplane Rating(s): Single-engine land; Multi-engine \nland\nSeat Occupied: Left\nOther Aircraft Rating(s): None Restraint Used: Unknown\nInstrument Rating(s): None Second Pilot Present: Yes\nInstructor Rating(s): None Toxicology Performed: \nMedical Certification: Class 1 With waivers/limitations Last FAA Medical Exam: April 10, 2023\nOccupational Pilot: Yes Last Flight Review or Equivalent:\nFlight Time: 20403 hours (Total, all aircraft), 10837 hours (Total, this make and model), 10858 hours (Pilot In \nCommand, all aircraft), 77 hours (Last 90 days, all aircraft), 47 hours (Last 30 days, all aircraft), \n5 hours (Last 24 hours, all aircraft)\nCo-pilot Information \nCertificate: Airline transport Age: 52\nAirplane Rating(s): Single-engine land; Multi-engine \nland\nSeat Occupied: Right\nOther Aircraft Rating(s): None Restraint Used: Unknown\nInstrument Rating(s): None Second Pilot Present: Yes\nInstructor Rating(s): None Toxicology Performed: \nMedical Certification: Class 1 With waivers/limitations Last FAA Medical Exam: December 2, 2022\nOccupational Pilot: Yes Last Flight Review or Equivalent:\nFlight Time: 10705 hours (Total, all aircraft), 483 hours (Total, this make and model), 1200 hours (Pilot In \nCommand, all aircraft), 254 hours (Last 90 days, all aircraft), 63 hours (Last 30 days, all aircraft), \n5 hours (Last 24 hours, all aircraft)"
+    },
+    {
+      "passage_id": "doc1-p11-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 11,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 13 of 13 DCA23FA417\nAdministrative Information\nInvestigator In Charge (IIC): Hauf, Michael\nAdditional Participating \nPersons:\nRick Domingo; Alaska Airlines; Seattle, WA\nNathan Williams; Boeing Commercial Airplanes\nMitch Mitchell; FAA; DC\nFred Baisch; AMFA\nMarc Henegar; ALPA\nOriginal Publish Date: May 22, 2025\nLast Revision Date:\nInvestigation Class: Class 2\nNote:\nInvestigation Docket: https://data.ntsb.gov/Docket?ProjectID=192903\nThe National Transportation Safety Board (NTSB) is an independent federal agency charged by Congress with \ninvestigating every civil aviation accident in the United States and significant events in other modes of transportation\u2014\nrailroad, transit, highway, marine, pipeline, and commercial space. We determine the probable causes of the accidents \nand events we investigate, and issue safety recommendations aimed at preventing future occurrences. In addition, we \nconduct transportation safety research studies and offer information and other assistance to family members and \nsurvivors for each accident or event we investigate. We also serve as the appellate authority for enforcement actions \ninvolving aviation and mariner certificates issued by the Federal Aviation Administration (FAA) and US Coast Guard, and \nwe adjudicate appeals of civil penalty actions taken by the FAA."
+    },
+    {
+      "passage_id": "doc1-p7-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 7,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Visual examination showed that most of the \nfracture surface was rough with a dull gray luster, and many of its edges had small shear lips. The fracture surface exhibited river patterns and chevron marks consistent with a fracture \nprogressing from a small thumbnail crack. The damage was located at approximately the 12:00 \nposition when looking at the fracture surface. This thumbnail crack exhibited diverse colors with crack arrest marks. These features were \nconsistent with pre-existing fatigue cracking in this pin section. The thumbnail crack \ndimensions, which were measured with a digital optical microscope, were 0.144 inches deep \nand 0.391 inches long (the linear length on the outer diameter). This subsurface intergranular \nregion measured 0.016 inches deep by 0.290 inches long inside the thumbnail crack. A Barkhausen noise inspection analysis detected elevated readings near the fracture surface. The highest readings were in areas with visible physical damage to the pin surface and near the \nthumbnail crack. Boeing indicated that these readings appeared to indicate residual stress in \nthe base metal. A fluorescent penetrant inspection and a magnetic particle inspection showed no indications of \nan abnormal network of cracks were observed on the surfaces of the part. Small cracks parallel \nand adjacent to the fracture surface were found in the chromium electroplated layer. These \ncracks were observed near the fracture origins."
+    },
+    {
+      "passage_id": "doc1-p9-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 9,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 11 of 13 DCA23FA417\nThe aircraft was required to be equipped with a cockpit voice recorder (CVR) that recorded at a \nminimum the last 2 hours of aircraft operation. The L-3/Fairchild FA2100 model CVR records a \nminimum of 120 minutes of digital audio stored on solid state memory modules. Four channels \nare recorded: one channel for each flight crew member, one channel for a cockpit observer, and \none channel for the cockpit area microphone. All used channels had good to excellent quality \naudio and a summary was created of the audio associated with the descent, approach, and \nlanding, up to the time the aircraft exited the runway for taxiway echo. Tests and Research\nA fatigue crack growth rate analysis was performed by counting striations at intervals along the \ncrack depth to better understand how long the fatigue crack had been present. The fatigue \nstriation counts were taken at 32 random and unique places on the fracture surface, with the \ndistances from the initiation site recorded. The fatigue crack growth rate analysis found that a total of 797 flight cycles had occurred from \nthe intergranular initiation site used as the origin to the end of the crack. The crack depth steadily \nincreased over time, corresponding with an expected increase in crack growth rate. The number \nof landings since the aft trunnion pin\u2019s last overhaul was 4,710 flight cycles. These data indicate \nthat the fatigue crack had not been present at, or before, the part overhaul."
+    },
+    {
+      "passage_id": "doc1-p8-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 8,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 10 of 13 DCA23FA417\nA closer examination of the initiation region of the thumbnail crack, including the chromium \nelectroplating surface layer and the darker subsurface intergranular layer, was conducted. The \nexamination showed that small ratchet marks were present on the thumbnail crack adjacent to \nthe intergranular area and below an area of the fractured external chromium electroplating layer. The plating layer exhibited layered fan-shaped characteristics with radiating features. The \nfaceted morphology of the area was consistent with fracture between grain boundaries. Much \nof the intergranular surfaces exhibited ridged or smooth surface features with clear triple points \nand some secondary cracking. Beyond the intergranular region, the thumbnail crack exhibited fatigue striations consistent with \nfatigue crack propagation. These striations originated along the edge of the intergranular region \nof the fracture surface. The ratchet marks, which were consistent with multiple initiation sites, \nindicated that the fatigue crack started along stress concentrations created by the morphology \nof the initial intergranular zone. An abrupt change in fracture features was observed at the end \nof the fatigue thumbnail crack. Outside the striations comprising the fatigue, the fracture surface \nexhibited dimpled rupture, which was consistent with subsequent overstress fracture of the pin \nduring the accident landing."
+    },
+    {
+      "passage_id": "doc1-p2-0",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 2,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "Page 4 of 13 DCA23FA417\nand right MLG position indicator lights were still illuminated in green. The captain shut down the \nright engine after confirming the APU was running. He then made announcements to the \npassengers and briefed the flight attendants about the situation.\nFigure 1. Collapsed left MLG and engine resting on the ground.\n \nThe FO announced, via the common traffic advisory frequency, the crew\u2019s intention for the \nairplane to remain on the taxiway, and SNA airport rescue and firefighting (ARFF) responded to \nthe scene. After ARFF personnel determined that no fuel was leaking and the flight crew \nconfirmed that no one aboard the airplane was injured, an evacuation was performed from \nairstairs positioned at the left forward door."
+    },
+    {
+      "passage_id": "doc1-p11-1",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 11,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "The NTSB does not assign fault or blame for an accident or incident; rather, as specified by NTSB regulation, \n\u201caccident/incident investigations are fact-finding proceedings with no formal issues and no adverse parties \u2026 and are \nnot conducted for the purpose of determining the rights or liabilities of any person\u201d (Title 49 Code of Federal Regulations \nsection 831.4). Assignment of fault or legal liability is not relevant to the NTSB\u2019s statutory mission to improve \ntransportation safety by investigating accidents and incidents and issuing safety recommendations. In addition, \nstatutory language prohibits the admission into evidence or use of any part of an NTSB report related to an accident in a \ncivil action for damages resulting from a matter mentioned in the report (Title 49 United States Code section 1154(b)). A \nfactual report that may be admissible under 49 United States Code section 1154(b) is available here."
+    },
+    {
+      "passage_id": "doc1-p7-2",
+      "document_title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+      "page_number": 7,
+      "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+      "evidence_role": "observation",
+      "text": "These \ncracks were observed near the fracture origins. Additional indications were observed on the \nsurface in areas that exhibited impact damage. Trunnion Pin \u2013 Forward Section\nThe forward section of the aft trunnion pin had features on its fracture surface that mirrored \nthose on the aft section of the aft trunnion pin, including a thumbnail crack along the edge."
+    },
+    {
+      "passage_id": "doc2-p2-0",
+      "document_title": "Advisory Circular AC 20-109B: Service Difficulty Reporting System",
+      "page_number": 2,
+      "source_url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_20-109B_FAA.pdf",
+      "evidence_role": "guidance",
+      "text": "11/1/23  AC 20-109B \n2 \n4 EFFECTIVE DATE. The effective date of this AC is November 1, 2023. 5 EXPLANATION OF CHANGES. This revision emphasizes the use of the SDRS \nweb-based database as the Administrator\u2019s prescribed and acceptable method of Service \nDifficulty Reporting for all operations including GA (as discussed in paragraph 1). The \nSDRS web-based database includes UAS operator reporting guidance. 6 WHAT THIS AC CANCELS. AC 20-109A, Service Difficulty Program (General \nAviation), dated April 8, 1993, is canceled. 7 SAFETY MANAGEMENT SYSTEM (SMS). A certificate holder (CH) under 14 CFR \npart 119 authorized to conduct operations in accordance with the requirements of \npart 121 must (per 14 CFR part 5, \u00a7 5.1) have an SMS that meets part 5 requirements and \nis acceptable to the Administrator. Section 5.71(a)(5) requires investigations of incidents \nand accidents. 7.1 AC 120-92, Safety Management Systems for Aviation Service Providers. AC 120-92 \npromotes the FAA view that each person who participates within the NAS, including \npart 145 repair stations, should develop, implement, and apply SMS constructs that \ngovern their operations. 7.2 FAA SMS. FAA Order 8000.369, Safety Management System, requires Aviation Safety \n(AVS) to have an SMS, and FAA Order 8040.4, Safety Risk Management Policy, \nrequires AVS to exercise Safety Risk Management (SRM) as it performs its safety duties \nand responsibilities. 8 THE FAA\u2019s SDRS DATABASE."
+    },
+    {
+      "passage_id": "doc2-p6-0",
+      "document_title": "Advisory Circular AC 20-109B: Service Difficulty Reporting System",
+      "page_number": 6,
+      "source_url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_20-109B_FAA.pdf",
+      "evidence_role": "guidance",
+      "text": "11/1/23  AC 20-109B \n6 \nManager, Aviation Data Systems Branch \nP.O. Box 25082 \nOklahoma City, OK 73125 \n11.1.2 Instruction Aids. S DRS resource links, field instructions, single/batch instructions, \nlook-up tables, and an SDRS quick reference guide can be found at https://sdrs.faa.gov \n(see Figures 1, 2, and 3 below). 12 INVESTIGATING SERVICE DIFFICULTIES. As discussed in paragraph 7 above, \nexercising SMS constructs that include safety risk analysis and assessment enable a \nperson to determine what should (and should not) be reported. Those who are required to \nsubmit SDRs should have manual procedures that explain how the operator will exercise \nlogical, safety-centric approach when making these decisions. The FAA\u2019s regulatory \nsafety expectations are that SDRs reflect diligence, attention to detail, and proactive \nefforts by those required (or if not required, those who choose) to report them. It is the \nresponsibility of product and article manufacturers, operators, maintainers, and the FAA \nto apply systematic safety risk analysis and assessment in order to make informed safety \ndecisions and report very accurate and timely safety data and information. Once all facts \nare gathered and the safety risk is established, a person is able to determine if a report is \nrequired and what (if any) corrective action is necessary. Corrective action within an \nSDR could require coordination between manufacturers and service providers."
+    },
+    {
+      "passage_id": "doc3-p1-0",
+      "document_title": "Aviation Investigation Final Report - American Airlines Flight 3023 (Comparison Case)",
+      "page_number": 1,
+      "source_url": "https://data.ntsb.gov/carol-repgen/api/Aviation/ReportMain/GenerateNewestReport/200663/pdf",
+      "evidence_role": "observation",
+      "text": "Page 1 of 11 \n \n \n \nAviation Investigation Final Report \n \n \nLocation: Denver, Colorado Accident Number: DCA25LA275 \nDate & Time: July 26, 2025, 14:16 Local  Registration: N306SW \nAircraft: Boeing 737-8 Aircraft Damage: Substantial \nDefining Event: Sys/Comp malf/fail (non-power) Injuries: 175 None \nFlight Conducted Under: Part 121: Air carrier - Scheduled \nAnalysis  \n \nOn July 26, 2025, American Airlines Flight 3023 experienced a failure of the left main landing \ngear (LMLG) tires and wheels during its takeoff roll, which resulted in a rejected takeoff and \nsubsequent smoke and fire from the LMLG (figure 1). The flight crew subsequently initiated an \nemergency evacuation. There were no reported injuries to passengers or crew. The flight was \nscheduled to operate from Denver International Airport (DEN), Denver, Colorado, to Miami \nInternational Airport (MIA), Miami, Florida. The flight was the second leg of a duty day following \nan earlier flight from Miami to DEN using the same airplane. \n \n \nFigure 1. Damage to the left main landing gear wheels and tires. (Source: City and County of \nDenver Department of Aviation)"
+    },
+    {
+      "passage_id": "doc2-p4-0",
+      "document_title": "Advisory Circular AC 20-109B: Service Difficulty Reporting System",
+      "page_number": 4,
+      "source_url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_20-109B_FAA.pdf",
+      "evidence_role": "guidance",
+      "text": "11/1/23  AC 20-109B \n4 \n10 SERVICE DIFFICULTY REPORTING. 10.1 Objective. The objective of Service Difficulty Reporting is to collect and consolidate \nreported data and information into a common data bank, allowing it to be distributed \namongst the aviation community, including the FAA\u2019s AVS organization. Various \ndivisions, sections, groups, and offices within AVS collate the data and information and \nuse it to analyze and assess operational reliability of aeronautical products and articles. AVS has the responsibility to identify and react proactively to in-service trends, \nreliability issues, or unsafe conditions. When analysis of data and information \nsubstantiate reliability issues or unsafe conditions, AVS can often preclude their negative \neffects and/or reoccurrence elsewhere by taking proactive mitigating actions. 10.1.1 Service Difficulty Reporting Evaluations. Evaluating service difficulties helps AVS \nAircraft Certification Service (AIR) branches and Certificate Management Sections, as \nwell as Flight Standards (FS) Air Carrier Safety Assurance (ACSA) offices and General \nAviation Safety Assurance (GASA) offices, determine what (if any) corrective action is \nrequired to remedy an unsafe condition in a product or article."
+    },
+    {
+      "passage_id": "doc2-p6-1",
+      "document_title": "Advisory Circular AC 20-109B: Service Difficulty Reporting System",
+      "page_number": 6,
+      "source_url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_20-109B_FAA.pdf",
+      "evidence_role": "guidance",
+      "text": "Corrective action within an \nSDR could require coordination between manufacturers and service providers. Corrective \nactions should be sophisticated, well thought out, communicated to employees, and \nshared with their industry stakeholders as much as possible. 12.1 AVS Re view and Analysis of SDR Data and Information. AVS has the responsibility \nand authority of the Administrator to react proactively to in-service trends, reliability \nissues, or unsafe conditions as it realizes them. Concerning SDRS, AVS offices review \nSDR data and information routinely and apply Order 8040.4 to determine what action \n(if any) AVS needs to take to correct an unsafe condition. 12.1.1 AIR SDR Rev iews. Within AIR, AIR branches and Certificate Management Sections \nreview SDRs per \u00a7 21.3(f) to identify potential unsafe conditions. 12.1.2 FS Rev iew. Reviews by FS Safety Assurance (SA) AW principal inspectors (PI) may \nlead to actions that are necessary to address immediate safety concerns. However, before \nacting, or shortly thereafter, the AW PI should discuss the matter and confirm the \nappropriateness of their actions with the following AVS organizations, as necessary: \n\u2022 FS A ircraft Evaluat ion Division (AED). \u2022 AIR branches and Certificate Management Sections. 12.2 Timely Reporting."
+    },
+    {
+      "passage_id": "doc2-p1-1",
+      "document_title": "Advisory Circular AC 20-109B: Service Difficulty Reporting System",
+      "page_number": 1,
+      "source_url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_20-109B_FAA.pdf",
+      "evidence_role": "guidance",
+      "text": "This AC promotes use of the Administrator\u2019s Service \nDifficulty Reporting System (SDRS) database accessed at https://sdrs.faa.gov. The \noverarching purpose of Service Difficulty Reporting is to promote safe operations and \nimprove the operational performance and reliability of products and articles produced \nunder 14 CFR part 21. 2.1 GA Community. The SDRS database is available to GA owners, operators, and \nmaintainers. GA Service Difficulty Reporting adds value and improves the overall safety \nof the entire NAS. This AC encourages the GA community to participate in this reporting \nprocess. Submitters may remain anonymous. 2.2 Small Unmanned Aircraft System (UAS) Aircraft. Service Difficulty Reporting does \nnot apply to small UAS operated under 14 CFR part 107. However, if a  small UAS \noperator is conducting a part 135 operation, they are required to submit a Service \nDifficulty Report (SDR) per \u00a7 135.415. In addition, a small UAS that operates over \nhuman beings must, per \u00a7 107.140(b), have an Airwo rthiness Certificate (AWC) issued \nunder part 21. The Production Approval Holder (PAH) of this type small UAS would \nbenefit from SDR data and information that shows a failure, malfunction, or defect \ncaused or could have caused an unsafe condition in the NAS. 3 WHERE YOU CAN FIND THIS AC. Y ou can find this AC on the FAA website at \nhttps://www.faa.gov/regulations_policies/advisory_circulars and the Dynamic Regulatory \nSystem (DRS) at https://drs.faa.gov."
+    },
+    {
+      "passage_id": "doc2-p2-1",
+      "document_title": "Advisory Circular AC 20-109B: Service Difficulty Reporting System",
+      "page_number": 2,
+      "source_url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_20-109B_FAA.pdf",
+      "evidence_role": "guidance",
+      "text": "8 THE FAA\u2019s SDRS DATABASE. The FAA\u2019s SDRS database (https://sdrs.faa.gov) \nreceives SDR data and information in a centralized location that PAHs, CHs, operators, \nmaintainers, and the FAA use to improve product and article safety and reliability. Preservation of sterile SDR safety data and information in the SDRS database permits \nauthorized persons to access and collate it, to apply SMS and SRM principles, and to act \nproactively to mitigate safety risks associated with product and article failures, \nmalfunctions, or defects. 8.1 Event Details. Service difficulty events require operators and maintainers to identify and \nreport timely, accurate, and complete data and information that \u00a7\u00a7 91.1415(e), \n121.703(e), 135.415(e), and 145.221(b) specify. In the interest of safety, part 125 CHs (as \nthey comply with \u00a7 125.409(a)) and part 91 GA operators should submit as much \ninformation as possible (or as much as they are capable of) into the SDRS database. 8.2 Benefits to Sharing Operational Safety Data and Information. A service difficulty \ncan occur due to a flaw within a product or article manufactured under part 21 caused by \na manufacturing process or design data error. They can also occur due to deficient or \nmisapplied maintenance/inspection programs and/or procedures used to maintain a \nproduct or article. The goal of Service Difficulty Reporting is to promote safe operations \nby identifying these deficiencies and acting proactively to eliminate them."
+    }
+  ],
+  "content_hash": "c200c5beb69cc65976df30f04b27305fb60ba9e6689279be8887d12938a9bd4b"
+}

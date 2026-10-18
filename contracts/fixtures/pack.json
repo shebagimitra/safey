@@ -1,0 +1,43 @@
+{
+  "pack_id": "FIXTURE:PACK-2026-LG-01",
+  "case_id": "FIXTURE:CASE-2026-LG",
+  "component_id": "landing_gear",
+  "question": "FIXTURE:What documented factors contributed to the landing gear extension anomaly?",
+  "created_at": "FIXTURE:2026-10-15T10:00:00Z",
+  "token_budget": 4000,
+  "approx_tokens": 520,
+  "passages": [
+    {
+      "passage_id": "FIXTURE:PASSAGE-001",
+      "document_title": "FIXTURE:Factual Report - Landing Gear Actuator Assembly",
+      "page_number": 4,
+      "source_url": "FIXTURE:https://data.ntsb.gov/Docket/doc_2026_001.pdf",
+      "evidence_role": "observation",
+      "text": "FIXTURE:Post-flight inspection revealed that the main landing gear downlock pin had fractured along the shear plane."
+    },
+    {
+      "passage_id": "FIXTURE:PASSAGE-002",
+      "document_title": "FIXTURE:Factual Report - Landing Gear Actuator Assembly",
+      "page_number": 7,
+      "source_url": "FIXTURE:https://data.ntsb.gov/Docket/doc_2026_001.pdf",
+      "evidence_role": "official_finding",
+      "text": "FIXTURE:Metallurgical laboratory analysis confirmed micro-void coalescence and stress corrosion cracking in the actuator cylinder."
+    },
+    {
+      "passage_id": "FIXTURE:PASSAGE-004",
+      "document_title": "FIXTURE:Factual Report - Landing Gear Actuator Assembly",
+      "page_number": 3,
+      "source_url": "FIXTURE:https://data.ntsb.gov/Docket/doc_2026_001.pdf",
+      "evidence_role": "guidance",
+      "text": "FIXTURE:Advisory Circular AC 20-109B provides guidance regarding periodic ultrasonic testing of landing gear pins."
+    },
+    {
+      "passage_id": "FIXTURE:PASSAGE-005",
+      "document_title": "FIXTURE:Factual Report - Landing Gear Actuator Assembly",
+      "page_number": 2,
+      "source_url": "FIXTURE:https://data.ntsb.gov/Docket/doc_2026_001.pdf",
+      "evidence_role": "corrective_action",
+      "text": "FIXTURE:Mandatory replacement of actuator return spring assembly within 50 flight cycles as corrective action."
+    }
+  ]
+}

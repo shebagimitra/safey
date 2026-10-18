@@ -1,0 +1,19 @@
+{
+  "case_id": "FIXTURE:CASE-2026-LG",
+  "official_conclusion_text": "FIXTURE:The National Transportation Safety Board determines that the probable cause was fatigue failure of the landing gear downlock pin.",
+  "questions": [
+    {
+      "id": "FIXTURE:Q1",
+      "component_id": "landing_gear",
+      "question": "FIXTURE:What structural failure was identified in the main landing gear downlock assembly?",
+      "expected_findings": [
+        {
+          "id": "FIXTURE:EF1",
+          "statement": "FIXTURE:Downlock pin fractured along shear plane due to stress corrosion.",
+          "source_hint": "FIXTURE:NTSB Final Report Section 2.1"
+        }
+      ],
+      "notes": "FIXTURE:Withheld from model during prediction run."
+    }
+  ]
+}

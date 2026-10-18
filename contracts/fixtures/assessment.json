@@ -1,0 +1,93 @@
+{
+  "case_id": "FIXTURE:CASE-2026-LG",
+  "selected_component": "landing_gear",
+  "brief_summary": "FIXTURE:Investigation evidence indicates mechanical failure in the downlock assembly with mixed hydraulic system observations.",
+  "evidence_status": "mixed",
+  "hypotheses": [
+    {
+      "id": "FIXTURE:H1",
+      "statement": "FIXTURE:Stress corrosion cracking in the actuator cylinder caused uncommanded extension resistance.",
+      "status": "plausible",
+      "supporting_evidence": [
+        {
+          "evidence_id": "FIXTURE:PASSAGE-002",
+          "quote": "FIXTURE:Metallurgical laboratory analysis confirmed micro-void coalescence and stress corrosion cracking in the actuator cylinder."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "evidence_id": "FIXTURE:PASSAGE-005",
+          "quote": "FIXTURE:Mandatory replacement of actuator return spring assembly within 50 flight cycles as corrective action."
+        }
+      ],
+      "reasoning": "FIXTURE:Laboratory analysis supports metallurgical fatigue, but the required return spring replacement suggests mechanical binding contributed independently.",
+      "limitations": [
+        "FIXTURE:Metallurgical evidence does not establish definitive operational sequence."
+      ]
+    },
+    {
+      "id": "FIXTURE:H2",
+      "statement": "FIXTURE:Pre-existing fatigue fracture of the downlock pin prevented mechanical locking during extension.",
+      "status": "weakly_supported",
+      "supporting_evidence": [
+        {
+          "evidence_id": "FIXTURE:PASSAGE-001",
+          "quote": "FIXTURE:Post-flight inspection revealed that the main landing gear downlock pin had fractured along the shear plane."
+        }
+      ],
+      "contradicting_evidence": [],
+      "reasoning": "FIXTURE:Physical pin fracture observed on post-flight inspection indicates locking failure.",
+      "limitations": [
+        "FIXTURE:Pin fracture may have occurred on ground impact rather than in-flight."
+      ]
+    }
+  ],
+  "documented_findings": [
+    {
+      "statement": "FIXTURE:Post-flight inspection documented that the main downlock pin was fractured along its shear plane.",
+      "evidence_id": "FIXTURE:PASSAGE-001",
+      "quote": "FIXTURE:Post-flight inspection revealed that the main landing gear downlock pin had fractured along the shear plane.",
+      "source_role": "observation"
+    }
+  ],
+  "missing_information": [
+    "FIXTURE:Flight data recorder hydraulic pressure sensor traces during final approach.",
+    "FIXTURE:Maintenance log records for actuator overhaul interval."
+  ],
+  "suggested_investigative_checks": [
+    {
+      "check": "FIXTURE:Perform ultrasonic non-destructive testing on fleet actuator cylinder housings.",
+      "rationale": "FIXTURE:Identify latent stress corrosion cracking before operational failure.",
+      "evidence_ids": [
+        "FIXTURE:PASSAGE-002",
+        "FIXTURE:PASSAGE-004"
+      ],
+      "safety_note": "FIXTURE:For qualified maintenance personnel only; not an airworthiness directive."
+    }
+  ],
+  "component_summaries": {
+    "engine": {
+      "evidence_status": "insufficient",
+      "passage_count": 0
+    },
+    "landing_gear": {
+      "evidence_status": "mixed",
+      "passage_count": 5
+    },
+    "hydraulic_system": {
+      "evidence_status": "supported",
+      "passage_count": 3
+    },
+    "wing_flaps": {
+      "evidence_status": "insufficient",
+      "passage_count": 0
+    },
+    "fuel_system": {
+      "evidence_status": "contradictory",
+      "passage_count": 1
+    }
+  },
+  "overall_limitations": [
+    "FIXTURE:Investigation support output only; not an official airworthiness determination."
+  ]
+}

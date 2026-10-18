@@ -1,0 +1,55 @@
+[
+  {
+    "document_id": "doc1",
+    "title": "Aviation Investigation Final Report (Factual Sections) - Alaska Airlines Flight 1288",
+    "file_path": "prediction_inputs/case_01_factual.pdf",
+    "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+    "publisher": "NTSB",
+    "document_type": "factual_report",
+    "publication_date": "2025-05-22",
+    "retrieval_date": "2026-10-17",
+    "case_id": "case_demo_01",
+    "split": "prediction",
+    "notes": "Contains history of flight, wreckage exams, and laboratory findings (Pages 3-13 of original NTSB report); conclusion removed[cite: 14, 16]."
+  },
+  {
+    "document_id": "doc2",
+    "title": "Advisory Circular AC 20-109B: Service Difficulty Reporting System",
+    "file_path": "prediction_inputs/faa_ac_20_109b_guidance.pdf",
+    "source_url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_20-109B_FAA.pdf",
+    "publisher": "Federal Aviation Administration (FAA)",
+    "document_type": "guidance",
+    "publication_date": "2023-11-01",
+    "evidence_role": "guidance",
+    "retrieval_date": "2026-10-17",
+    "case_id": "guidance_general",
+    "split": "prediction",
+    "notes": "Provides regulatory guidance on maintenance defect reporting, SMS, and CAMP[cite: 2, 4]."
+  },
+  {
+    "document_id": "doc3",
+    "title": "Aviation Investigation Final Report - American Airlines Flight 3023 (Comparison Case)",
+    "file_path": "prediction_inputs/hist_dca25la275_comparison.pdf",
+    "source_url": "https://data.ntsb.gov/carol-repgen/api/Aviation/ReportMain/GenerateNewestReport/200663/pdf",
+    "publisher": "NTSB",
+    "document_type": "comparison_report",
+    "publication_date": "2026-08-26",
+    "retrieval_date": "2026-10-17",
+    "case_id": "hist_dca25la275",
+    "split": "prediction",
+    "notes": "Historical comparison/counterexample case involving 737 landing gear/wheel issues due to thermal plugs rather than structural pin failure[cite: 27, 32]."
+  },
+  {
+    "document_id": "doc4",
+    "title": "Aviation Investigation Final Report (Analysis & Probable Cause) - Alaska Airlines Flight 1288",
+    "file_path": "withheld_truth/case_01_withheld_truth.pdf",
+    "source_url": "https://www.flightradar24.com/blog/wp-content/uploads/2025/05/NTSB_Final_N516AS.pdf",
+    "publisher": "NTSB",
+    "document_type": "final_report",
+    "publication_date": "2025-05-22",
+    "retrieval_date": "2026-10-17",
+    "case_id": "case_demo_01",
+    "split": "truth",
+    "notes": "Contains official analysis, findings, and probable cause; strictly isolated and never shown to the model during prediction[cite: 1, 14, 15]."
+  }
+]

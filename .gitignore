@@ -1,0 +1,27 @@
+# ============================================================
+# COMPONENT: C11a - Git Ignore Rules
+# PURPOSE: Exclude local artifacts, secrets, and truth PDFs from version control tracking.
+# INPUT: Working tree file paths evaluated by git status/add.
+# OUTPUT: Ignored file list preventing accidental check-in of secrets and truth data.
+# CALLED BY: Git CLI / version control      CALLS: None
+# IF IT BREAKS, CHECK: Ignore patterns syntax, exception rule precedence with !.
+# ============================================================
+
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+.git
+data/trace.log
+data/runs_archive/
+scratch*.py
+new_scratch.py
+run_live_once.py
+data/reports/manual_review_backup.csv
+data/processed/evolus_raw/_usage.jsonl
+
+# Truth PDF from data/manifest.json (split: "truth", file_path: "withheld_truth/case_01_withheld_truth.pdf")
+data/withheld_truth/case_01_withheld_truth.pdf
+withheld_truth/case_01_withheld_truth.pdf

@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "document_id": "doc1",
+    "tool": "summarize",
+    "options": {
+      "style": "bullets",
+      "length": "medium"
+    },
+    "requested_at": "2026-10-18T05:55:48.064107+00:00",
+    "elapsed_s": 5.242,
+    "http_status": 200,
+    "file_name": "case_01_factual.pdf",
+    "file_bytes": 1651147,
+    "source_split": "prediction",
+    "credits_consumed": 11.717616,
+    "label": "GENERATED_BY_EVOLUS_NOT_VERIFIED"
+  },
+  "response": {
+    "tool": "summarize",
+    "output": "- On August 20, 2023, Alaska Airlines Flight 1288, a Boeing 737-800 (N516AS), suffered substantial damage when its left main landing gear (MLG) collapsed after landing on wet Runway 20R at John Wayne Airport, California.\n- The 112 occupants evacuated via airstairs onto a taxiway; no injuries, fire, explosion, or fuel leak occurred.\n- The approach was conducted at night in instrument conditions, with rain, turbulence, shifting winds, and a recorded crosswind reaching 43 knots. Touchdown occurred at 2314:57 with approximately 1.71 G vertical acceleration.\n- The crew initially observed all landing-gear indicators showing down and locked. After exiting the runway, the aircraft leaned about 5\u00b0 left and rested on the left engine cowling; both engines were shut down.\n- Examination found the left MLG aft trunnion pin fractured across its diameter. The fracture contained a fatigue \u201cthumbnail\u201d crack originating in an intergranular region beneath the chromium plating.\n- Analysis indicated the crack developed over approximately 797 flight cycles after the landing gear\u2019s 2018 overhaul and progressed until overstress failure during landing.",
+    "totalTokenCount": null,
+    "creditsConsumed": 11.717616,
+    "sourceText": null,
+    "truncated": false
+  }
+}

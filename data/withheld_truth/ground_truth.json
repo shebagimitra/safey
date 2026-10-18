@@ -1,0 +1,26 @@
+{
+  "case_id": "case_demo_01",
+  "accident_number": "DCA23FA417",
+  "registration": "N516AS",
+  "selected_component": "landing_gear",
+  "page_offset_in_factual_pdf": 2,
+  "official_probable_cause": "Maintenance personnel's excessive grinding of the left main landing gear's aft trunnion pin during machining, which imparted heat damage to the base metal and led to the fatigue cracking that caused the pin to fracture during landing.",
+  "official_findings": [
+    "Aircraft - Main landing gear attach sec - Incorrect service/maintenance",
+    "Aircraft - Main landing gear attach sec - Fatigue/wear/corrosion"
+  ],
+  "key_factual_anchors": [
+    {
+      "fact": "Left MLG aft trunnion pin overhauled on July 5, 2018 by Sunvair Inc. at 11,116 cycles; fractured after 4,710 cycles since overhaul.",
+      "original_page": 7
+    },
+    {
+      "fact": "Thumbnail fatigue crack (0.144 in deep, 0.391 in long) initiated at subsurface intergranular region (0.016 in deep) with elevated Barkhausen noise readings indicating residual stress/heat exposure.",
+      "original_page": 9
+    },
+    {
+      "fact": "Fatigue striation count showed crack propagated for 797 flight cycles, proving it developed after the July 2018 overhaul.",
+      "original_page": 11
+    }
+  ]
+}

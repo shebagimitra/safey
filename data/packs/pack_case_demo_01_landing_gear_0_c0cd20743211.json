@@ -1,0 +1,11 @@
+{
+  "pack_id": "pack_case_demo_01_landing_gear_0_c0cd20743211",
+  "case_id": "case_demo_01",
+  "component_id": "landing_gear",
+  "question": "For Alaska Airlines flight 1288 (Boeing 737-800, N516AS, Santa Ana, California, August 20, 2023), what caused the left main landing gear collapse, and what remains unknown?",
+  "created_at": "2026-10-18T00:41:31Z",
+  "token_budget": 6000,
+  "approx_tokens": 0,
+  "passages": [],
+  "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "run-df3a7fa2db65",
+  "run_label": "A",
+  "model_name": "none",
+  "config": {
+    "temperature": 0.0,
+    "thinking": false,
+    "max_model_len": 0,
+    "other": {
+      "max_tokens": 4000
+    }
+  },
+  "pack_id": "pack_case_demo_01_not_a_component_A_8afc54a9392c",
+  "raw_output": "",
+  "assessment": null,
+  "verification": null,
+  "metrics": {
+    "latency_s": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "tokens_per_s": 0.0
+  },
+  "timestamp": "2026-10-18T07:15:51Z",
+  "error": "no evidence available for this component"
+}

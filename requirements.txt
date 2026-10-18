@@ -1,0 +1,6 @@
+pydantic>=2
+fastapi
+uvicorn
+httpx
+python-dotenv
+pypdf

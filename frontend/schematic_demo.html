@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+     COMPONENT: C8 - Aircraft Schematic Standalone Demo & Test Page
+     PURPOSE: Host, demonstrate, and self-test the interactive C8 aircraft schematic against assessment fixture.
+     INPUT: contracts/fixtures/assessment.json, frontend/schematic.js, frontend/styles.css
+     OUTPUT: Rendered test page with interactive schematic, event audit log, and PASS/FAIL test verdict.
+     CALLED BY: Browser / manual / automated test suite      CALLS: frontend/schematic.js, contracts/fixtures/assessment.json
+     IF IT BREAKS, CHECK: Relative fetch path to assessment.json, ES module loading, DOM element IDs.
+     ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C8 Aircraft Schematic Demo &amp; Self-Test</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Demo Page Container & Layout Styles */
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--schematic-bg, #f8fafc);
+      color: var(--schematic-text, #0f172a);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      box-sizing: border-box;
+    }
+
+    .demo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--schematic-border, #cbd5e1);
+    }
+
+    .demo-title-group h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .demo-title-group p {
+      margin: 4px 0 0 0;
+      font-size: 13px;
+      color: var(--schematic-text-muted, #64748b);
+    }
+
+    .demo-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid var(--schematic-border, #cbd5e1);
+      background: var(--schematic-card-bg, #ffffff);
+      color: var(--schematic-text, #0f172a);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      background: var(--schematic-border, #e2e8f0);
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #1d4ed8;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    /* Self-Test Verdict Banner */
+    .selftest-banner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .selftest-banner.pass {
+      background: rgba(22, 163, 74, 0.14);
+      color: #15803d;
+      border: 2px solid #16a34a;
+    }
+
+    .selftest-banner.fail {
+      background: rgba(220, 38, 38, 0.14);
+      color: #b91c1c;
+      border: 2px solid #dc2626;
+    }
+
+    .selftest-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+    }
+
+    .selftest-banner.pass .selftest-badge {
+      background: #16a34a;
+    }
+
+    .selftest-banner.fail .selftest-badge {
+      background: #dc2626;
+    }
+
+    /* Main Grid Layout - Adapts smoothly from 50% to 200% zoom */
+    .demo-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 380px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 1100px) {
+      .demo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Sidebar Panels */
+    .sidebar-panel {
+      background: var(--schematic-card-bg, #ffffff);
+      border: 2px solid var(--schematic-border, #cbd5e1);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar-title {
+      margin: 0 0 12px 0;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--schematic-text-muted, #64748b);
+      border-bottom: 1px solid var(--schematic-border, #cbd5e1);
+      padding-bottom: 6px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: var(--schematic-text-muted, #64748b);
+    }
+
+    .info-value {
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .summary-text {
+      font-size: 12px;
+      line-height: 1.45;
+      background: var(--schematic-bg, #f8fafc);
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid var(--schematic-border, #cbd5e1);
+      margin-top: 8px;
+    }
+
+    /* Interactive Component Controls */
+    .controls-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    /* Event Audit Log */
+    .event-log-container {
+      max-height: 240px;
+      overflow-y: auto;
+      background: var(--schematic-bg, #f8fafc);
+      border: 1px solid var(--schematic-border, #cbd5e1);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11px;
+    }
+
+    .event-log-entry {
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .event-log-entry:last-child {
+      border-bottom: none;
+    }
+
+    .event-time {
+      color: var(--schematic-text-muted, #64748b);
+      margin-right: 6px;
+    }
+
+    .event-target {
+      color: #2563eb;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header class="demo-header">
+    <div class="demo-title-group">
+      <h1>C8 Aircraft Schematic Display</h1>
+      <p>Modular Interactive Component &bull; Top-Down SVG Airframe &bull; Evidence Strength Semantics (§12.4)</p>
+    </div>
+    <div class="demo-actions">
+      <button id="theme-toggle-btn" class="btn" type="button" title="Toggle theme">
+        <span id="theme-icon">&#9681;</span> Toggle Light/Dark
+      </button>
+      <button id="reload-fixture-btn" class="btn btn-primary" type="button" title="Re-apply assessment.json fixture">
+        Reload Fixture
+      </button>
+    </div>
+  </header>
+
+  <!-- Self-Test Verdict Banner -->
+  <div id="selftest-result" class="selftest-banner" role="status" aria-live="polite">
+    <span class="selftest-badge">TESTING</span> Running component self-test...
+  </div>
+
+  <!-- Main Content Grid -->
+  <main class="demo-grid">
+    <!-- Schematic Display Target -->
+    <section>
+      <div id="schematic-container"></div>
+    </section>
+
+    <!-- Sidebar: Case Info, Interactive Controls, and Event Audit Log -->
+    <aside>
+      <!-- Case & Assessment Information Card -->
+      <div class="sidebar-panel">
+        <h2 class="sidebar-title">Assessment Fixture</h2>
+        <div class="info-row">
+          <span class="info-label">Case ID:</span>
+          <span id="info-case-id" class="info-value">--</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Selected Component:</span>
+          <span id="info-selected-comp" class="info-value">--</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Evidence Strength:</span>
+          <span id="info-evidence-status" class="info-value">--</span>
+        </div>
+        <div class="summary-text" id="info-brief-summary">Loading fixture data...</div>
+      </div>
+
+      <!-- Manual Component Selection Controls -->
+      <div class="sidebar-panel">
+        <h2 class="sidebar-title">Select Component</h2>
+        <div class="controls-grid">
+          <button class="btn btn-select" data-comp="engine" type="button">engine</button>
+          <button class="btn btn-select" data-comp="landing_gear" type="button">landing_gear</button>
+          <button class="btn btn-select" data-comp="hydraulic_system" type="button">hydraulic_system</button>
+          <button class="btn btn-select" data-comp="wing_flaps" type="button">wing_flaps</button>
+          <button class="btn btn-select" data-comp="fuel_system" type="button">fuel_system</button>
+        </div>
+
+        <h2 class="sidebar-title" style="margin-top: 14px;">Set Evidence Strength on Selected</h2>
+        <div class="controls-grid">
+          <button class="btn btn-status" data-status="supported" type="button">supported (Red: strong evidence)</button>
+          <button class="btn btn-status" data-status="mixed" type="button">mixed (Amber: mixed evidence)</button>
+          <button class="btn btn-status" data-status="contradictory" type="button">contradictory (Amber: conflicting)</button>
+          <button class="btn btn-status" data-status="insufficient" type="button">insufficient (Gray: insufficient)</button>
+          <button class="btn btn-status" data-status="unassessed" type="button">unassessed (Gray: not assessed)</button>
+        </div>
+        <div class="reserved-note" style="margin-top: 10px; padding: 8px 10px; background: var(--schematic-bg); border-radius: 6px; font-size: 11px; color: var(--schematic-text-muted); line-height: 1.4;">
+          <strong>Reserved (not model-driven):</strong>
+          <button class="btn btn-status" data-status="historical" type="button" style="font-size: 11px; padding: 3px 8px; margin: 4px 4px 0 0;">historical (Blue)</button>
+          <button class="btn btn-status" data-status="corrective" type="button" style="font-size: 11px; padding: 3px 8px; margin: 4px 0 0 0;">corrective (Green)</button>
+        </div>
+      </div>
+
+      <!-- Event Audit Log -->
+      <div class="sidebar-panel">
+        <h2 class="sidebar-title">Event Audit Log (component-selected)</h2>
+        <div id="event-log" class="event-log-container" aria-live="polite">
+          <div class="event-log-entry" style="color: var(--schematic-text-muted);">Awaiting user interaction...</div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ES Module Script -->
+  <script type="module">
+    // ============================================================
+    // COMPONENT: C8 - Aircraft Schematic Standalone Demo & Test Page
+    // PURPOSE: Host, demonstrate, and self-test the interactive C8 aircraft schematic against assessment fixture.
+    // INPUT: contracts/fixtures/assessment.json, frontend/schematic.js, frontend/styles.css
+    // OUTPUT: Rendered test page with interactive schematic, event audit log, and PASS/FAIL test verdict.
+    // CALLED BY: Browser / manual / automated test suite      CALLS: frontend/schematic.js, contracts/fixtures/assessment.json
+    // IF IT BREAKS, CHECK: Relative fetch path to assessment.json, ES module loading, DOM element IDs.
+    // ============================================================
+
+    import {
+      mountSchematic,
+      setRegionStatus,
+      setSelected,
+      VALID_COMPONENTS,
+      STATUS_TO_COLOR,
+      ComponentError,
+      trace
+    } from "./schematic.js";
+
+    // Configurable fixture path at top of file
+    const FIXTURE_PATH = "../contracts/fixtures/assessment.json";
+
+    // Fallback embedded assessment fixture data if local fetch is blocked (e.g., file:/// protocol)
+    const EMBEDDED_FIXTURE_FALLBACK = {
+      case_id: "FIXTURE:CASE-2026-LG",
+      selected_component: "landing_gear",
+      brief_summary: "FIXTURE:Investigation evidence indicates mechanical failure in the downlock assembly with mixed hydraulic system observations.",
+      evidence_status: "mixed",
+      component_summaries: {
+        engine: { evidence_status: "insufficient", passage_count: 0 },
+        landing_gear: { evidence_status: "mixed", passage_count: 5 },
+        hydraulic_system: { evidence_status: "supported", passage_count: 3 },
+        wing_flaps: { evidence_status: "insufficient", passage_count: 0 },
+        fuel_system: { evidence_status: "contradictory", passage_count: 1 }
+      }
+    };
+
+    /**
+     * Append entry to visible event audit log.
+     *
+     * IN: eventName (string), detail (object).
+     * OUT: void.
+     * FAILS WITH: Never fails.
+     */
+    function logEvent(eventName, detail) {
+      // STEP 1: Format timestamp and log line | takes: eventName, detail | gives: HTML string
+      const logContainer = document.getElementById("event-log");
+      if (!logContainer) return;
+
+      const timeStr = new Date().toLocaleTimeString();
+      const compId = detail && detail.componentId ? detail.componentId : JSON.stringify(detail);
+      const entry = document.createElement("div");
+      entry.className = "event-log-entry";
+      entry.innerHTML = `<span class="event-time">[${timeStr}]</span> <strong>${eventName}</strong> &rarr; <span class="event-target">${compId}</span>`;
+
+      // STEP 2: Prepend or append entry to log container | takes: entry | gives: updated DOM
+      if (logContainer.children.length === 1 && logContainer.children[0].textContent.includes("Awaiting")) {
+        logContainer.innerHTML = "";
+      }
+      logContainer.appendChild(entry);
+      logContainer.scrollTop = logContainer.scrollHeight;
+    }
+
+    /**
+     * Execute programmatic self-test verifying regions and setRegionStatus responsiveness.
+     *
+     * IN: containerEl (HTMLElement).
+     * OUT: object { pass: boolean, reason: string }.
+     * FAILS WITH: Never fails, returns { pass: false, reason }.
+     */
+    function runSelfTest(containerEl) {
+      // STEP 1: Verify container and SVG presence | takes: containerEl | gives: SVG element
+      const svg = containerEl.querySelector("svg.schematic-svg");
+      if (!svg) {
+        return { pass: false, reason: "Missing svg.schematic-svg element in container" };
+      }
+
+      // STEP 2: Verify all 5 regions exist with stable IDs | takes: VALID_COMPONENTS | gives: verified elements
+      for (const compId of VALID_COMPONENTS) {
+        const el = containerEl.querySelector(`#${compId}`);
+        if (!el) {
+          return { pass: false, reason: `Region #${compId} not found in schematic` };
+        }
+        if (el.getAttribute("role") !== "button") {
+          return { pass: false, reason: `Region #${compId} missing role="button"` };
+        }
+        if (el.getAttribute("tabindex") !== "0") {
+          return { pass: false, reason: `Region #${compId} missing tabindex="0"` };
+        }
+        const badgeText = el.querySelector(".badge-text");
+        if (!badgeText) {
+          return { pass: false, reason: `Region #${compId} missing .badge-text element` };
+        }
+        const labelText = el.querySelector(".region-label");
+        if (!labelText) {
+          return { pass: false, reason: `Region #${compId} missing .region-label element` };
+        }
+      }
+
+      // STEP 3: Verify setRegionStatus modifies classes and badge values correctly | takes: setRegionStatus | gives: tested regions
+      try {
+        setRegionStatus("engine", "supported", 12);
+        const engineEl = containerEl.querySelector("#engine");
+        if (!engineEl.classList.contains("status-red") || engineEl.querySelector(".badge-text").textContent !== "12") {
+          return { pass: false, reason: "setRegionStatus failed to apply status-red or badge count 12 to engine" };
+        }
+
+        setRegionStatus("landing_gear", "mixed", 5);
+        const lgEl = containerEl.querySelector("#landing_gear");
+        if (!lgEl.classList.contains("status-amber") || lgEl.querySelector(".badge-text").textContent !== "5") {
+          return { pass: false, reason: "setRegionStatus failed to apply status-amber or badge count 5 to landing_gear" };
+        }
+
+        setRegionStatus("hydraulic_system", "insufficient", 0);
+        const hydEl = containerEl.querySelector("#hydraulic_system");
+        if (!hydEl.classList.contains("status-gray") || hydEl.querySelector(".badge-text").textContent !== "0") {
+          return { pass: false, reason: "setRegionStatus failed to apply status-gray or badge count 0 to hydraulic_system" };
+        }
+
+        setSelected("landing_gear");
+        if (!lgEl.classList.contains("is-selected") || lgEl.getAttribute("aria-pressed") !== "true") {
+          return { pass: false, reason: "setSelected failed to apply .is-selected class or aria-pressed='true'" };
+        }
+      } catch (err) {
+        return { pass: false, reason: `setRegionStatus threw exception: ${err.message}` };
+      }
+
+      // STEP 4: Return successful pass verdict | takes: None | gives: verdict object
+      return { pass: true, reason: "All five regions exist, have badges and labels, and respond to setRegionStatus correctly" };
+    }
+
+    /**
+     * Load assessment fixture from URL and apply component summaries to schematic regions.
+     *
+     * IN: fixturePath (string), containerEl (HTMLElement).
+     * OUT: Promise<void>.
+     * FAILS WITH: ComponentError on fixture processing failure.
+     */
+    async function loadAssessment(fixturePath, containerEl) {
+      // STEP 1: Fetch fixture JSON with fallback for local file execution | takes: fixturePath | gives: raw assessment object
+      let assessment = null;
+      try {
+        trace("C8", "Fetching assessment fixture", { path: fixturePath });
+        const resp = await fetch(fixturePath);
+        if (!resp.ok) {
+          throw new Error(`HTTP ${resp.status} - ${resp.statusText}`);
+        }
+        assessment = await resp.json();
+      } catch (fetchErr) {
+        trace("C8", "Fetch failed, using embedded fixture fallback", { error: fetchErr.message });
+        assessment = EMBEDDED_FIXTURE_FALLBACK;
+      }
+
+      // STEP 2: Populate UI header and summary information card | takes: assessment | gives: updated info card
+      document.getElementById("info-case-id").textContent = assessment.case_id || "N/A";
+      document.getElementById("info-selected-comp").textContent = assessment.selected_component || "N/A";
+      document.getElementById("info-evidence-status").textContent = assessment.evidence_status || "N/A";
+      document.getElementById("info-brief-summary").textContent = assessment.brief_summary || "No summary available";
+
+      // STEP 3: Apply component_summaries to the schematic regions | takes: assessment.component_summaries | gives: updated regions
+      if (assessment.component_summaries) {
+        for (const [compId, summary] of Object.entries(assessment.component_summaries)) {
+          if (VALID_COMPONENTS.includes(compId)) {
+            setRegionStatus(compId, summary.evidence_status, summary.passage_count);
+          }
+        }
+      }
+
+      // STEP 4: Set initial selected component from fixture | takes: assessment.selected_component | gives: selected region
+      if (assessment.selected_component && VALID_COMPONENTS.includes(assessment.selected_component)) {
+        setSelected(assessment.selected_component);
+      }
+
+      // STEP 5: Log load action to event audit log | takes: assessment | gives: audit entry
+      logEvent("fixture-loaded", { case_id: assessment.case_id, selected: assessment.selected_component });
+    }
+
+    /**
+     * Initialize demo application, mount schematic, execute self-test, and bind controls.
+     *
+     * IN: None.
+     * OUT: Promise<void>.
+     * FAILS WITH: ComponentError if initialization fails.
+     */
+    async function initDemo() {
+      // STEP 1: Locate host container element | takes: None | gives: containerEl
+      const containerEl = document.getElementById("schematic-container");
+      if (!containerEl) {
+        throw new ComponentError("C8", "initDemo", "Missing #schematic-container in DOM");
+      }
+
+      // STEP 2: Mount C8 schematic into host container | takes: containerEl | gives: mounted schematic
+      mountSchematic(containerEl);
+
+      // STEP 3: Attach listener for CustomEvent "component-selected" | takes: containerEl | gives: bound event listener
+      containerEl.addEventListener("component-selected", (e) => {
+        const compId = e.detail && e.detail.componentId ? e.detail.componentId : "unknown";
+        logEvent("component-selected", { componentId: compId });
+        document.getElementById("info-selected-comp").textContent = compId;
+      });
+
+      // STEP 4: Execute self-test and display visible PASS/FAIL line | takes: containerEl | gives: test result rendered
+      const testResult = runSelfTest(containerEl);
+      const bannerEl = document.getElementById("selftest-result");
+      if (testResult.pass) {
+        bannerEl.className = "selftest-banner pass";
+        bannerEl.innerHTML = `<span class="selftest-badge">PASS</span> ${testResult.reason}`;
+        trace("C8", "Self-test passed", { result: "PASS" });
+      } else {
+        bannerEl.className = "selftest-banner fail";
+        bannerEl.innerHTML = `<span class="selftest-badge">FAIL</span> ${testResult.reason}`;
+        trace("C8", "Self-test failed", { result: "FAIL", reason: testResult.reason });
+      }
+
+      // STEP 5: Load and apply assessment fixture | takes: FIXTURE_PATH, containerEl | gives: fixture applied
+      await loadAssessment(FIXTURE_PATH, containerEl);
+
+      // STEP 6: Bind interactive sidebar controls (select buttons, status buttons, theme toggle) | takes: DOM | gives: interactive controls
+      document.querySelectorAll(".btn-select").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const comp = btn.dataset.comp;
+          setSelected(comp);
+          containerEl.dispatchEvent(new CustomEvent("component-selected", { detail: { componentId: comp }, bubbles: true }));
+        });
+      });
+
+      let activeTargetComp = "landing_gear";
+      containerEl.addEventListener("component-selected", (e) => {
+        activeTargetComp = e.detail.componentId;
+      });
+
+      document.querySelectorAll(".btn-status").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const status = btn.dataset.status;
+          setRegionStatus(activeTargetComp, status, 3);
+          logEvent("status-updated", { componentId: activeTargetComp, status, count: 3 });
+        });
+      });
+
+      // Reload fixture button
+      document.getElementById("reload-fixture-btn").addEventListener("click", async () => {
+        await loadAssessment(FIXTURE_PATH, containerEl);
+      });
+
+      // Theme toggle button
+      document.getElementById("theme-toggle-btn").addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        trace("C8", "Toggled theme", { theme: newTheme });
+      });
+    }
+
+    // Bootstrap demo on DOM load
+    window.addEventListener("DOMContentLoaded", () => {
+      initDemo().catch((err) => {
+        const bannerEl = document.getElementById("selftest-result");
+        if (bannerEl) {
+          bannerEl.className = "selftest-banner fail";
+          bannerEl.innerHTML = `<span class="selftest-badge">FAIL</span> Initialization error: ${err.message}`;
+        }
+        console.error("Demo initialization failed:", err);
+      });
+    });
+  </script>
+</body>
+</html>

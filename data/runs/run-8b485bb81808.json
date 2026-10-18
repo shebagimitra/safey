@@ -1,0 +1,107 @@
+{
+  "run_id": "run-8b485bb81808",
+  "run_label": "A",
+  "model_name": "self-dploy/Gemma-4-31B-IT",
+  "config": {
+    "temperature": 0.0,
+    "thinking": false,
+    "max_model_len": 0,
+    "other": {
+      "max_tokens": 4000
+    }
+  },
+  "pack_id": "pack_case_demo_01_landing_gear_A_b01ca157c0d4",
+  "raw_output": "```json\n{\n  \"brief_summary\": \"Alaska Airlines flight 1288 sustained substantial damage when the left main landing gear (MLG) collapsed after landing at John Wayne-Orange County Airport on August 20, 2023. Postaccident examination determined the collapse was caused by the failure of the left MLG aft trunnion pin due to a fatigue crack.\",\n  \"evidence_status\": \"supported\",\n  \"hypotheses\": [],\n  \"documented_findings\": [\n    {\n      \"statement\": \"The left main landing gear collapsed after landing on runway 20R at John Wayne-Orange County Airport (SNA), Santa Ana, California.\",\n      \"evidence_id\": \"doc1-p1-0\",\n      \"quote\": \"Alaska Airlines flight 1288, a Boeing 737-800, N516AS, sustained substantial damage when the left MLG collapsed after landing on runway 20R at John Wayne-Orange County Airport (SNA), Santa Ana, California.\",\n      \"source_role\": \"observation\"\n    },\n    {\n      \"statement\": \"The aft trunnion pin in the left main landing gear failed during the landing because of a fatigue crack.\",\n      \"evidence_id\": \"doc1-p10-1\",\n      \"quote\": \"Postaccident examination found that the aft trunnion pin in the left main landing gear failed during the landing due to a fatigue crack.\",\n      \"source_role\": \"official_finding\"\n    },\n    {\n      \"statement\": \"The left MLG aft trunnion pin fractured vertically in half across its diameter, approximately perpendicular to the length of the pin at its midspan.\",\n      \"evidence_id\": \"doc1-p6-1\",\n      \"quote\": \"The inspection also found that the left MLG aft trunnion pin had fractured in half vertically across its diameter. ... The left MLG aft trunnion pin had fractured approximately perpendicular to the length of the pin at its midspan.\",\n      \"source_role\": \"observation\"\n    },\n    {\n      \"statement\": \"Evidence indicates the fatigue crack was not present at or before the part's overhaul.\",\n      \"evidence_id\": \"doc1-p9-1\",\n      \"quote\": \"These data indicate that the fatigue crack had not been present at, or before, the part overhaul.\",\n      \"source_role\": \"observation\"\n    }\n  ],\n  \"missing_information\": [\n    \"The specific root cause or initiating factor that led to the development of the fatigue crack after the 2018 overhaul.\"\n  ],\n  \"suggested_investigative_checks\": [],\n  \"overall_limitations\": [\n    \"The provided evidence consists of factual sections of the investigation report; final probable cause determinations may be contained in other report sections not provided.\"\n  ]\n}\n```",
+  "assessment": {
+    "case_id": "case_demo_01",
+    "selected_component": "landing_gear",
+    "brief_summary": "Alaska Airlines flight 1288 sustained substantial damage when the left main landing gear (MLG) collapsed after landing at John Wayne-Orange County Airport on August 20, 2023. Postaccident examination determined the collapse was caused by the failure of the left MLG aft trunnion pin due to a fatigue crack.",
+    "evidence_status": "mixed",
+    "hypotheses": [],
+    "documented_findings": [
+      {
+        "statement": "The left main landing gear collapsed after landing on runway 20R at John Wayne-Orange County Airport (SNA), Santa Ana, California.",
+        "evidence_id": "doc1-p1-0",
+        "quote": "Alaska Airlines flight 1288, a Boeing 737-800, N516AS, sustained substantial damage when the left MLG collapsed after landing on runway 20R at John Wayne-Orange County Airport (SNA), Santa Ana, California.",
+        "source_role": "observation"
+      },
+      {
+        "statement": "The aft trunnion pin in the left main landing gear failed during the landing because of a fatigue crack.",
+        "evidence_id": "doc1-p10-1",
+        "quote": "Postaccident examination found that the aft trunnion pin in the left main landing gear failed during the landing due to a fatigue crack.",
+        "source_role": "official_finding"
+      },
+      {
+        "statement": "[needs_review: quote not found in passage 'doc1-p6-1'] The left MLG aft trunnion pin fractured vertically in half across its diameter, approximately perpendicular to the length of the pin at its midspan.",
+        "evidence_id": "doc1-p6-1",
+        "quote": "The inspection also found that the left MLG aft trunnion pin had fractured in half vertically across its diameter. ... The left MLG aft trunnion pin had fractured approximately perpendicular to the length of the pin at its midspan.",
+        "source_role": "observation"
+      },
+      {
+        "statement": "Evidence indicates the fatigue crack was not present at or before the part's overhaul.",
+        "evidence_id": "doc1-p9-1",
+        "quote": "These data indicate that the fatigue crack had not been present at, or before, the part overhaul.",
+        "source_role": "observation"
+      }
+    ],
+    "missing_information": [
+      "The specific root cause or initiating factor that led to the development of the fatigue crack after the 2018 overhaul."
+    ],
+    "suggested_investigative_checks": [],
+    "component_summaries": {
+      "landing_gear": {
+        "evidence_status": "mixed",
+        "passage_count": 11
+      }
+    },
+    "overall_limitations": [
+      "The provided evidence consists of factual sections of the investigation report; final probable cause determinations may be contained in other report sections not provided."
+    ]
+  },
+  "verification": {
+    "status": "partial",
+    "claim_checks": [
+      {
+        "claim_ref": "finding[0].doc1-p1-0",
+        "evidence_id": "doc1-p1-0",
+        "id_exists": true,
+        "quote_found": true,
+        "downgraded": false,
+        "reason": null
+      },
+      {
+        "claim_ref": "finding[1].doc1-p10-1",
+        "evidence_id": "doc1-p10-1",
+        "id_exists": true,
+        "quote_found": true,
+        "downgraded": false,
+        "reason": null
+      },
+      {
+        "claim_ref": "finding[2].doc1-p6-1",
+        "evidence_id": "doc1-p6-1",
+        "id_exists": true,
+        "quote_found": false,
+        "downgraded": true,
+        "reason": "quote not found in passage 'doc1-p6-1'"
+      },
+      {
+        "claim_ref": "finding[3].doc1-p9-1",
+        "evidence_id": "doc1-p9-1",
+        "id_exists": true,
+        "quote_found": true,
+        "downgraded": false,
+        "reason": null
+      }
+    ],
+    "retries_used": 0
+  },
+  "metrics": {
+    "latency_s": 91.6374,
+    "input_tokens": 4967,
+    "output_tokens": 641,
+    "tokens_per_s": 6.99
+  },
+  "timestamp": "2026-10-18T00:43:12Z",
+  "error": null
+}

@@ -1,0 +1,11 @@
+{
+  "pack_id": "pack_case_demo_01_not_a_component_A_8afc54a9392c",
+  "case_id": "case_demo_01",
+  "component_id": "not_a_component",
+  "question": "x",
+  "created_at": "2026-10-18T07:15:51Z",
+  "token_budget": 3000,
+  "approx_tokens": 0,
+  "passages": [],
+  "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

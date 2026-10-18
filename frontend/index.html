@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+     COMPONENT: C9 - Aircraft Investigation Dashboard Shell
+     PURPOSE: Host layout structure for aircraft schematic, briefing panels, controls, metrics strip, and citation drawer.
+     INPUT: /frontend/styles.css, frontend/schematic.js, frontend/panels.js, /frontend/app.js.
+     OUTPUT: Interactive visual investigation interface for aviation accident analysis.
+     CALLED BY: Web browser, end-user analyst, self-test harness (?mock=1)      CALLS: /frontend/app.js, /frontend/styles.css
+     IF IT BREAKS, CHECK: Element IDs matching app.js selectors, ES module script loading, stylesheet link.
+     ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviation Investigation Dashboard - Modular Analysis Shell</title>
+  <link rel="stylesheet" href="/frontend/styles.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- TOP HEADER & NAVIGATION -->
+  <header class="app-header">
+    <div class="header-brand">
+      <div class="brand-logo">&#x2708;&#xFE0F;</div>
+      <div class="brand-titles">
+        <h1 class="brand-name">Aviation Investigation Dashboard</h1>
+        <p class="brand-subtitle">Modular Safety Pipeline &bull; Airframe Systems Analysis &bull; Component C9</p>
+      </div>
+    </div>
+
+    <!-- TABS NAVIGATION -->
+    <nav class="header-nav" role="tablist" aria-label="Dashboard Views">
+      <button type="button" class="tab-btn is-active" data-tab="briefing" role="tab" aria-selected="true">
+        Analysis Briefing
+      </button>
+      <button type="button" class="tab-btn" data-tab="evaluation" role="tab" aria-selected="false">
+        Evaluation &amp; Ground Truth
+      </button>
+    </nav>
+  </header>
+
+  <!-- PERSISTENT LIMITATIONS NOTICE -->
+  <div class="persistent-banner" role="alert">
+    <span class="persistent-icon">&#x26A0;</span>
+    <span class="persistent-text">
+      <strong>Investigation support only.</strong> Not an airworthiness or maintenance decision. Never infer findings when evidence is absent.
+    </span>
+  </div>
+
+  <!-- SELF-TEST VERDICT CONTAINER (Displayed in ?mock=1 mode) -->
+  <div id="selftest-verdict-container" class="selftest-slot"></div>
+
+  <!-- MAIN MULTI-PANEL WORKSPACE -->
+  <main class="dashboard-workspace">
+
+    <!-- LEFT PANEL: CONTROLS & SELECTION -->
+    <aside class="panel-column left-controls-panel" aria-label="Investigation Controls">
+      <div class="controls-card">
+        <!-- Error Banner for Failed /api/cases in Real Mode -->
+        <div id="cases-error-banner" class="cases-error-banner is-hidden" role="alert"></div>
+
+        <div class="control-group">
+          <label for="case-select" class="control-label">Investigation Case</label>
+          <select id="case-select" class="form-select" aria-label="Select Aviation Investigation Case">
+            <option value="">Loading cases...</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Aircraft Components (Tagged Passages)</label>
+          <div id="component-list-container" class="component-list-box" role="listbox" aria-label="Aircraft Component Selector">
+            <!-- Populated dynamically by app.js -->
+          </div>
+          <span class="control-help">Values indicate curated tagged passages in corpus, not verified conclusions.</span>
+        </div>
+
+        <div class="control-group">
+          <label for="question-input" class="control-label">Investigation Query</label>
+          <textarea id="question-input" class="form-textarea" rows="4" placeholder="Enter analytical investigation question...">For Alaska Airlines flight 1288 (Boeing 737-800, N516AS, Santa Ana, California, August 20, 2023), what caused the left main landing gear collapse, and what remains unknown?</textarea>
+        </div>
+
+        <div class="control-grid-row">
+          <div class="control-group col-half">
+            <label for="mode-select" class="control-label">Reasoning Mode</label>
+            <select id="mode-select" class="form-select">
+              <option value="A" selected>Run A: 3,000-token pack</option>
+              <option value="B">Run B: 8,000-token pack</option>
+              <option value="C">Run C: 16,000-token pack</option>
+              <option value="0">Run 0: no documents (baseline)</option>
+            </select>
+          </div>
+          <div class="control-group col-half">
+            <label for="token-budget-input" class="control-label">Token Budget</label>
+            <input id="token-budget-input" type="number" class="form-input form-input-readonly" value="3000" readonly aria-readonly="true">
+          </div>
+        </div>
+        <span class="control-help">Token budget is fixed per mode preset (0: 6k, A: 3k, B: 8k, C: 16k tokens).</span>
+
+        <div class="control-group checkbox-control-group">
+          <label class="checkbox-label" for="replay-saved-checkbox">
+            <input type="checkbox" id="replay-saved-checkbox" checked>
+            <span>Replay saved run (no model call)</span>
+          </label>
+        </div>
+
+        <div class="control-group">
+          <label for="saved-runs-select" class="control-label">Load Saved Run (Fast Replay)</label>
+          <select id="saved-runs-select" class="form-select" aria-label="Load Saved Prediction Run">
+            <option value="">-- Load saved run (renders without model call) --</option>
+          </select>
+          <span class="control-help">Select a completed run to inspect findings immediately without latency.</span>
+        </div>
+
+        <div class="control-actions">
+          <button type="button" id="analyze-btn" class="btn btn-primary btn-block btn-analyze">
+            Analyze Component
+          </button>
+          <div id="analyze-timer" class="analyze-timer is-hidden" aria-live="polite">
+            Analyzing... (0s elapsed - live calls take 1-3 mins)
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CENTER PANEL: INTERACTIVE AIRCRAFT SCHEMATIC -->
+    <section class="panel-column center-schematic-panel" aria-label="Interactive Aircraft Schematic">
+      <div class="schematic-header-bar">
+        <h2 class="schematic-view-title">Top-Down Airframe Systems Overview</h2>
+        <span class="schematic-instructions">Click a highlighted component region to inspect findings</span>
+      </div>
+
+      <!-- C8 Interactive SVG mounted here -->
+      <div id="schematic-canvas-area" class="schematic-canvas-container"></div>
+
+      <!-- Section 12.4 Status Colors Reference Legend -->
+      <div class="schematic-legend-card" role="region" aria-label="Evidence status color guide">
+        <div class="legend-card-header">
+          <span class="legend-card-title">Evidence Strength Semantics (&sect;12.4)</span>
+          <span class="legend-card-subtitle">Colors indicate corpus evidence strength, not flight safety</span>
+        </div>
+        <div class="legend-card-grid">
+          <div class="legend-pill-item">
+            <span class="legend-swatch status-red"></span>
+            <div class="legend-pill-text">
+              <strong>Red: Supported</strong>
+              <span>Authoritative documented concern</span>
+            </div>
+          </div>
+          <div class="legend-pill-item">
+            <span class="legend-swatch status-amber"></span>
+            <div class="legend-pill-text">
+              <strong>Amber: Mixed / Contradictory</strong>
+              <span>Unresolved hypothesis or conflicting data</span>
+            </div>
+          </div>
+          <div class="legend-pill-item">
+            <span class="legend-swatch status-blue"></span>
+            <div class="legend-pill-text">
+              <strong>Blue: Reference</strong>
+              <span>Historical comparison or guidance</span>
+            </div>
+          </div>
+          <div class="legend-pill-item">
+            <span class="legend-swatch status-green"></span>
+            <div class="legend-pill-text">
+              <strong>Green: Corrective Action</strong>
+              <span>Verified mandatory directive (never model inferred)</span>
+            </div>
+          </div>
+          <div class="legend-pill-item">
+            <span class="legend-swatch status-gray"></span>
+            <div class="legend-pill-text">
+              <strong>Gray: Insufficient</strong>
+              <span>Default baseline or unassessed component</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT PANEL: BRIEFING & EVALUATION VIEWS -->
+    <section class="panel-column right-briefing-panel" aria-label="Investigation Briefing and Findings">
+
+      <!-- VIEW 1: ANALYSIS BRIEFING -->
+      <div id="briefing-view-container" class="tab-view active-view">
+        <div class="briefing-scroll-container">
+          <div id="briefing-content" class="briefing-body">
+            <!-- Populated dynamically by panels.js -->
+            <div class="initial-prompt-card">
+              <h3>System Initialized</h3>
+              <p>Select a case and aircraft component region to view investigation findings and documented citations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW 2: EVALUATION & GROUND TRUTH -->
+      <div id="evaluation-view-container" class="tab-view is-hidden">
+        <!-- Populated dynamically by panels.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM METRICS STRIP -->
+  <footer class="app-metrics-footer" aria-label="Run Metrics and Pipeline Telemetry">
+    <div class="metrics-footer-header">
+      <span class="metrics-strip-title">&#x1F4CA; Measured Run Metrics</span>
+      <span class="metrics-strip-note">Displays strictly measured values; unmeasured properties marked "not measured"</span>
+    </div>
+    <div id="metrics-strip-container" class="metrics-strip-content">
+      <!-- Populated dynamically by panels.js -->
+    </div>
+  </footer>
+
+  <!-- CITATION DRAWER / MODAL -->
+  <div id="citation-drawer" class="citation-drawer" role="dialog" aria-modal="true" aria-label="Evidence Citation Details">
+    <!-- Populated dynamically by panels.js -->
+  </div>
+
+  <!-- APPLICATION CONTROLLER SCRIPT -->
+  <script type="module" src="/frontend/app.js"></script>
+</body>
+</html>

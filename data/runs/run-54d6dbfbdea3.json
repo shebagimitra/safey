@@ -1,0 +1,138 @@
+{
+  "run_id": "run-54d6dbfbdea3",
+  "run_label": "C",
+  "model_name": "self-dploy/Gemma-4-31B-IT",
+  "config": {
+    "temperature": 0.0,
+    "thinking": false,
+    "max_model_len": 0,
+    "other": {
+      "max_tokens": 4000
+    }
+  },
+  "pack_id": "pack_case_demo_01_landing_gear_C_3776548f2c43",
+  "raw_output": "```json\n{\n  \"brief_summary\": \"The left main landing gear (MLG) of Alaska Airlines flight 1288 collapsed after landing due to the failure of the aft trunnion pin, which fractured in half vertically across its diameter. Post-accident examination determined the failure was caused by a fatigue crack that initiated from a subsurface intergranular region and propagated over approximately 797 flight cycles.\",\n  \"evidence_status\": \"supported\",\n  \"hypotheses\": [],\n  \"documented_findings\": [\n    {\n      \"statement\": \"The left main landing gear aft trunnion pin failed during landing because of a fatigue crack.\",\n      \"evidence_id\": \"doc1-p10-1\",\n      \"quote\": \"Postaccident examination found that the aft trunnion pin in the left main landing gear failed during the landing due to a fatigue crack.\",\n      \"source_role\": \"official_finding\"\n    },\n    {\n      \"statement\": \"The aft trunnion pin fractured vertically across its diameter, with one half remaining in the rear landing gear beam spherical bearing and the other in the MLG trunnion outer cylinder.\",\n      \"evidence_id\": \"doc1-p6-1\",\n      \"quote\": \"The inspection also found that the left MLG aft trunnion pin had fractured in half vertically across its diameter. One-half of the aft trunnion pin remained within the spherical bearing of the rear landing gear beam, and the other half remained in the outer cylinder of the MLG trunnion.\",\n      \"source_role\": \"observation\"\n    },\n    {\n      \"statement\": \"Fatigue crack growth analysis indicates the crack existed for a total of 797 flight cycles prior to the failure.\",\n      \"evidence_id\": \"doc1-p9-0\",\n      \"quote\": \"The fatigue crack growth rate analysis found that a total of 797 flight cycles had occurred from the intergranular initiation site used as the origin to the end of the crack.\",\n      \"source_role\": \"observation\"\n    },\n    {\n      \"statement\": \"The fatigue crack was not present at or before the part's last overhaul on July 5, 2018.\",\n      \"evidence_id\": \"doc1-p9-1\",\n      \"quote\": \"These data indicate that the fatigue crack had not been present at, or before, the part overhaul.\",\n      \"source_role\": \"observation\"\n    },\n    {\n      \"statement\": \"The final failure of the pin was an overstress fracture occurring during the accident landing.\",\n      \"evidence_id\": \"doc1-p8-0\",\n      \"quote\": \"Outside the striations comprising the fatigue, the fracture surface exhibited dimpled rupture, which was consistent with subsequent overstress fracture of the pin during the accident landing.\",\n      \"source_role\": \"observation\"\n    }\n  ],\n  \"missing_information\": [\n    \"The specific root cause of the intergranular initiation site (e.g., whether it was caused by the overhaul process, material defect, or operational stress) is not explicitly stated, although residual stress was noted.\"\n  ],\n  \"suggested_investigative_checks\": [\n    {\n      \"check\": \"Review of the overhaul process performed by Sunvair Inc. on July 5, 2018, specifically the chromium stripping and electroplating steps.\",\n      \"rationale\": \"The pin was overhauled shortly before installation and the fatigue crack initiated after this process; understanding the specific grinding and plating parameters may reveal the source of the intergranular region.\",\n      \"evidence_ids\": [\n        \"doc1-p5-0\"\n      ],\n      \"safety_note\": \"This review should be conducted by qualified quality assurance auditors and metallurgical experts.\"\n    }\n  ],\n  \"overall_limitations\": [\n    \"The analysis is based on factual sections of the investigation report; final probable cause determinations by the NTSB may provide further synthesis.\"\n  ]\n}\n```",
+  "assessment": {
+    "case_id": "case_demo_01",
+    "selected_component": "landing_gear",
+    "brief_summary": "The left main landing gear (MLG) of Alaska Airlines flight 1288 collapsed after landing due to the failure of the aft trunnion pin, which fractured in half vertically across its diameter. Post-accident examination determined the failure was caused by a fatigue crack that initiated from a subsurface intergranular region and propagated over approximately 797 flight cycles.",
+    "evidence_status": "mixed",
+    "hypotheses": [],
+    "documented_findings": [
+      {
+        "statement": "The left main landing gear aft trunnion pin failed during landing because of a fatigue crack.",
+        "evidence_id": "doc1-p10-1",
+        "quote": "Postaccident examination found that the aft trunnion pin in the left main landing gear failed during the landing due to a fatigue crack.",
+        "source_role": "official_finding"
+      },
+      {
+        "statement": "[needs_review: quote not found in passage 'doc1-p6-1'] The aft trunnion pin fractured vertically across its diameter, with one half remaining in the rear landing gear beam spherical bearing and the other in the MLG trunnion outer cylinder.",
+        "evidence_id": "doc1-p6-1",
+        "quote": "The inspection also found that the left MLG aft trunnion pin had fractured in half vertically across its diameter. One-half of the aft trunnion pin remained within the spherical bearing of the rear landing gear beam, and the other half remained in the outer cylinder of the MLG trunnion.",
+        "source_role": "observation"
+      },
+      {
+        "statement": "Fatigue crack growth analysis indicates the crack existed for a total of 797 flight cycles prior to the failure.",
+        "evidence_id": "doc1-p9-0",
+        "quote": "The fatigue crack growth rate analysis found that a total of 797 flight cycles had occurred from the intergranular initiation site used as the origin to the end of the crack.",
+        "source_role": "observation"
+      },
+      {
+        "statement": "The fatigue crack was not present at or before the part's last overhaul on July 5, 2018.",
+        "evidence_id": "doc1-p9-1",
+        "quote": "These data indicate that the fatigue crack had not been present at, or before, the part overhaul.",
+        "source_role": "observation"
+      },
+      {
+        "statement": "The final failure of the pin was an overstress fracture occurring during the accident landing.",
+        "evidence_id": "doc1-p8-0",
+        "quote": "Outside the striations comprising the fatigue, the fracture surface exhibited dimpled rupture, which was consistent with subsequent overstress fracture of the pin during the accident landing.",
+        "source_role": "observation"
+      }
+    ],
+    "missing_information": [
+      "The specific root cause of the intergranular initiation site (e.g., whether it was caused by the overhaul process, material defect, or operational stress) is not explicitly stated, although residual stress was noted."
+    ],
+    "suggested_investigative_checks": [
+      {
+        "check": "Review of the overhaul process performed by Sunvair Inc. on July 5, 2018, specifically the chromium stripping and electroplating steps.",
+        "rationale": "The pin was overhauled shortly before installation and the fatigue crack initiated after this process; understanding the specific grinding and plating parameters may reveal the source of the intergranular region.",
+        "evidence_ids": [
+          "doc1-p5-0"
+        ],
+        "safety_note": "This review should be conducted by qualified quality assurance auditors and metallurgical experts."
+      }
+    ],
+    "component_summaries": {
+      "landing_gear": {
+        "evidence_status": "mixed",
+        "passage_count": 44
+      }
+    },
+    "overall_limitations": [
+      "The analysis is based on factual sections of the investigation report; final probable cause determinations by the NTSB may provide further synthesis."
+    ]
+  },
+  "verification": {
+    "status": "partial",
+    "claim_checks": [
+      {
+        "claim_ref": "finding[0].doc1-p10-1",
+        "evidence_id": "doc1-p10-1",
+        "id_exists": true,
+        "quote_found": true,
+        "downgraded": false,
+        "reason": null
+      },
+      {
+        "claim_ref": "finding[1].doc1-p6-1",
+        "evidence_id": "doc1-p6-1",
+        "id_exists": true,
+        "quote_found": false,
+        "downgraded": true,
+        "reason": "quote not found in passage 'doc1-p6-1'"
+      },
+      {
+        "claim_ref": "finding[2].doc1-p9-0",
+        "evidence_id": "doc1-p9-0",
+        "id_exists": true,
+        "quote_found": true,
+        "downgraded": false,
+        "reason": null
+      },
+      {
+        "claim_ref": "finding[3].doc1-p9-1",
+        "evidence_id": "doc1-p9-1",
+        "id_exists": true,
+        "quote_found": true,
+        "downgraded": false,
+        "reason": null
+      },
+      {
+        "claim_ref": "finding[4].doc1-p8-0",
+        "evidence_id": "doc1-p8-0",
+        "id_exists": true,
+        "quote_found": true,
+        "downgraded": false,
+        "reason": null
+      },
+      {
+        "claim_ref": "check[0].evidence_ids.doc1-p5-0",
+        "evidence_id": "doc1-p5-0",
+        "id_exists": true,
+        "quote_found": true,
+        "downgraded": false,
+        "reason": null
+      }
+    ],
+    "retries_used": 0
+  },
+  "metrics": {
+    "latency_s": 51.4869,
+    "input_tokens": 15693,
+    "output_tokens": 884,
+    "tokens_per_s": 17.17
+  },
+  "timestamp": "2026-10-18T00:55:08Z",
+  "error": null
+}
