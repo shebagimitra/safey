@@ -1,0 +1,136 @@
+[2026-10-15T16:04:15Z] [C0] Starting self-test validation on fixtures | fixtures_dir=C:\Users\utente\Downloads\project\contracts\fixtures
+[2026-10-15T16:04:15Z] [C0] Validated document manifest | count=2
+[2026-10-15T16:04:15Z] [C0] Manifest fixture verified | count=2
+[2026-10-15T16:04:15Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-001 role=observation
+[2026-10-15T16:04:15Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-002 role=official_finding
+[2026-10-15T16:04:15Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-003 role=recommendation
+[2026-10-15T16:04:15Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-004 role=guidance
+[2026-10-15T16:04:15Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-005 role=corrective_action
+[2026-10-15T16:04:15Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-006 role=model_inference
+[2026-10-15T16:04:15Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-007 role=spoken_statement
+[2026-10-15T16:04:15Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-008 role=official_finding
+[2026-10-15T16:04:15Z] [C0] Passages fixture verified | count=8
+[2026-10-15T16:04:15Z] [C0] Validated evidence pack | pack_id=FIXTURE:PACK-2026-LG-01 passage_count=4
+[2026-10-15T16:04:15Z] [C0] Evidence pack fixture verified | pack_id=FIXTURE:PACK-2026-LG-01 passage_count=4
+[2026-10-15T16:04:15Z] [C0] Assessment validation failed | error=trace() got multiple values for argument 'component'
+[2026-10-15T16:04:15Z] [C0] Self-test failure | error=[C0] step 'validate_assessment' failed: Assessment validation error: trace() got multiple values for argument 'component'
+[2026-10-15T16:05:17Z] [C0] Starting self-test validation on fixtures | fixtures_dir=C:\Users\utente\Downloads\project\contracts\fixtures
+[2026-10-15T16:05:17Z] [C0] Validated document manifest | count=2
+[2026-10-15T16:05:17Z] [C0] Manifest fixture verified | count=2
+[2026-10-15T16:05:17Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-001 role=observation
+[2026-10-15T16:05:17Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-002 role=official_finding
+[2026-10-15T16:05:17Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-003 role=recommendation
+[2026-10-15T16:05:17Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-004 role=guidance
+[2026-10-15T16:05:17Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-005 role=corrective_action
+[2026-10-15T16:05:17Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-006 role=model_inference
+[2026-10-15T16:05:17Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-007 role=spoken_statement
+[2026-10-15T16:05:17Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-008 role=official_finding
+[2026-10-15T16:05:17Z] [C0] Passages fixture verified | count=8
+[2026-10-15T16:05:17Z] [C0] Validated evidence pack | pack_id=FIXTURE:PACK-2026-LG-01 passage_count=4
+[2026-10-15T16:05:17Z] [C0] Evidence pack fixture verified | pack_id=FIXTURE:PACK-2026-LG-01 passage_count=4
+[2026-10-15T16:05:17Z] [C0] Validated assessment | case_id=FIXTURE:CASE-2026-LG selected_component=landing_gear
+[2026-10-15T16:05:17Z] [C0] Assessment fixture verified | hypotheses=2 components=5
+[2026-10-15T16:05:17Z] [C0] Validated run log | run_id=FIXTURE:RUN-2026-001 label=A
+[2026-10-15T16:05:17Z] [C0] RunLog fixture verified | run_id=FIXTURE:RUN-2026-001 status=verified
+[2026-10-15T16:05:17Z] [C0] Validated benchmark | case_id=FIXTURE:CASE-2026-LG questions=1
+[2026-10-15T16:05:17Z] [C0] Benchmark fixture verified | case_id=FIXTURE:CASE-2026-LG questions=1
+[2026-10-15T16:05:17Z] [C0] All fixtures passed schema and semantic validation
+[2026-10-15T16:05:29Z] [C0] Starting self-test validation on fixtures | fixtures_dir=C:\Users\utente\Downloads\project\contracts\fixtures
+[2026-10-15T16:05:29Z] [C0] Validated document manifest | count=2
+[2026-10-15T16:05:29Z] [C0] Manifest fixture verified | count=2
+[2026-10-15T16:05:29Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-001 role=observation
+[2026-10-15T16:05:29Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-002 role=official_finding
+[2026-10-15T16:05:29Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-003 role=recommendation
+[2026-10-15T16:05:29Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-004 role=guidance
+[2026-10-15T16:05:29Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-005 role=corrective_action
+[2026-10-15T16:05:29Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-006 role=model_inference
+[2026-10-15T16:05:29Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-007 role=spoken_statement
+[2026-10-15T16:05:29Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-008 role=official_finding
+[2026-10-15T16:05:29Z] [C0] Passages fixture verified | count=8
+[2026-10-15T16:05:29Z] [C0] Validated evidence pack | pack_id=FIXTURE:PACK-2026-LG-01 passage_count=4
+[2026-10-15T16:05:29Z] [C0] Evidence pack fixture verified | pack_id=FIXTURE:PACK-2026-LG-01 passage_count=4
+[2026-10-15T16:05:29Z] [C0] Validated assessment | case_id=FIXTURE:CASE-2026-LG selected_component=landing_gear
+[2026-10-15T16:05:29Z] [C0] Assessment fixture verified | hypotheses=2 components=5
+[2026-10-15T16:05:29Z] [C0] Validated run log | run_id=FIXTURE:RUN-2026-001 label=A
+[2026-10-15T16:05:29Z] [C0] RunLog fixture verified | run_id=FIXTURE:RUN-2026-001 status=verified
+[2026-10-15T16:05:29Z] [C0] Validated benchmark | case_id=FIXTURE:CASE-2026-LG questions=1
+[2026-10-15T16:05:29Z] [C0] Benchmark fixture verified | case_id=FIXTURE:CASE-2026-LG questions=1
+[2026-10-15T16:05:29Z] [C0] All fixtures passed schema and semantic validation
+[2026-10-15T16:05:37Z] [C0] Self-test diagnostic event | test_id=selftest_001 status=ok
+[2026-10-15T16:05:37Z] [C0] Checking required environment variables | required_count=7
+[2026-10-15T16:05:37Z] [C0] Missing configuration setting | missing_var=LLM_BASE_URL
+[2026-10-15T16:05:37Z] [C0] Checking required environment variables | required_count=7
+[2026-10-15T16:05:37Z] [C0] Settings successfully loaded and validated | data_dir=data
+[2026-10-15T16:06:14Z] [C0] Starting self-test validation on fixtures | fixtures_dir=C:\Users\utente\Downloads\project\contracts\fixtures
+[2026-10-15T16:06:14Z] [C0] Validated document manifest | count=2
+[2026-10-15T16:06:14Z] [C0] Manifest fixture verified | count=2
+[2026-10-15T16:06:14Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-001 role=observation
+[2026-10-15T16:06:14Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-002 role=official_finding
+[2026-10-15T16:06:14Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-003 role=recommendation
+[2026-10-15T16:06:14Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-004 role=guidance
+[2026-10-15T16:06:14Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-005 role=corrective_action
+[2026-10-15T16:06:14Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-006 role=model_inference
+[2026-10-15T16:06:14Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-007 role=spoken_statement
+[2026-10-15T16:06:14Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-008 role=official_finding
+[2026-10-15T16:06:14Z] [C0] Passages fixture verified | count=8
+[2026-10-15T16:06:14Z] [C0] Validated evidence pack | pack_id=FIXTURE:PACK-2026-LG-01 passage_count=4
+[2026-10-15T16:06:14Z] [C0] Evidence pack fixture verified | pack_id=FIXTURE:PACK-2026-LG-01 passage_count=4
+[2026-10-15T16:06:14Z] [C0] Validated assessment | case_id=FIXTURE:CASE-2026-LG selected_component=landing_gear
+[2026-10-15T16:06:14Z] [C0] Assessment fixture verified | hypotheses=2 components=5
+[2026-10-15T16:06:14Z] [C0] Validated run log | run_id=FIXTURE:RUN-2026-001 label=A
+[2026-10-15T16:06:14Z] [C0] RunLog fixture verified | run_id=FIXTURE:RUN-2026-001 status=verified
+[2026-10-15T16:06:14Z] [C0] Validated benchmark | case_id=FIXTURE:CASE-2026-LG questions=1
+[2026-10-15T16:06:14Z] [C0] Benchmark fixture verified | case_id=FIXTURE:CASE-2026-LG questions=1
+[2026-10-15T16:06:14Z] [C0] All fixtures passed schema and semantic validation
+[2026-10-15T16:06:14Z] [C0] Checking required environment variables | required_count=7
+[2026-10-15T16:06:14Z] [C0] Missing configuration setting | missing_var=LLM_BASE_URL
+[2026-10-15T16:06:14Z] [C0] Checking required environment variables | required_count=7
+[2026-10-15T16:06:14Z] [C0] Settings successfully loaded and validated | data_dir=data
+[2026-10-15T16:06:15Z] [C0] Self-test diagnostic event | test_id=selftest_001 status=ok
+[2026-10-16T10:30:07Z] [C2] Started local mock server for self-test | port=56229
+[2026-10-16T10:30:08Z] [C2] Health check probed endpoint | status_code=200 is_healthy=True
+[2026-10-16T10:30:08Z] [C2] Dispatching chat completion request | message_count=1 temperature=0.0 max_tokens=500 server_schema=False
+[2026-10-16T10:30:08Z] [C2] Chat completion succeeded | latency_s=0.2939 input_tokens=15 output_tokens=30 tokens_per_s=102.08
+[2026-10-16T10:30:08Z] [C2] Dispatching chat completion request | message_count=1 temperature=0.0 max_tokens=2000 server_schema=False
+[2026-10-16T10:30:08Z] [C2] Chat completion HTTP error | status_code=500
+[2026-10-16T10:30:09Z] [C2] Mock self-test assertions passed successfully
+[2026-10-16T10:30:18Z] [C2] Started local mock server for self-test | port=56234
+[2026-10-16T10:30:18Z] [C2] Health check probed endpoint | status_code=200 is_healthy=True
+[2026-10-16T10:30:18Z] [C2] Dispatching chat completion request | message_count=1 temperature=0.0 max_tokens=500 server_schema=False
+[2026-10-16T10:30:19Z] [C2] Chat completion succeeded | latency_s=0.3122 input_tokens=15 output_tokens=30 tokens_per_s=96.09
+[2026-10-16T10:30:19Z] [C2] Dispatching chat completion request | message_count=1 temperature=0.0 max_tokens=2000 server_schema=False
+[2026-10-16T10:30:19Z] [C2] Chat completion HTTP error | status_code=500
+[2026-10-16T10:30:19Z] [C2] Mock self-test assertions passed successfully
+[2026-10-16T10:30:24Z] [C2] Started local mock server for self-test | port=56240
+[2026-10-16T10:30:25Z] [C2] Health check probed endpoint | status_code=200 is_healthy=True
+[2026-10-16T10:30:25Z] [C2] Dispatching chat completion request | message_count=1 temperature=0.0 max_tokens=500 server_schema=False
+[2026-10-16T10:30:25Z] [C2] Chat completion succeeded | latency_s=0.3259 input_tokens=15 output_tokens=30 tokens_per_s=92.06
+[2026-10-16T10:30:25Z] [C2] Dispatching chat completion request | message_count=1 temperature=0.0 max_tokens=2000 server_schema=False
+[2026-10-16T10:30:25Z] [C2] Chat completion HTTP error | status_code=500
+[2026-10-16T10:30:26Z] [C2] Mock self-test assertions passed successfully
+[2026-10-16T10:30:33Z] [C0] Starting self-test validation on fixtures | fixtures_dir=C:\Users\utente\Downloads\project\contracts\fixtures
+[2026-10-16T10:30:33Z] [C0] Validated document manifest | count=2
+[2026-10-16T10:30:33Z] [C0] Manifest fixture verified | count=2
+[2026-10-16T10:30:33Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-001 role=observation
+[2026-10-16T10:30:33Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-002 role=official_finding
+[2026-10-16T10:30:33Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-003 role=recommendation
+[2026-10-16T10:30:33Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-004 role=guidance
+[2026-10-16T10:30:33Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-005 role=corrective_action
+[2026-10-16T10:30:33Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-006 role=model_inference
+[2026-10-16T10:30:33Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-007 role=spoken_statement
+[2026-10-16T10:30:33Z] [C0] Validated passage | passage_id=FIXTURE:PASSAGE-008 role=official_finding
+[2026-10-16T10:30:33Z] [C0] Passages fixture verified | count=8
+[2026-10-16T10:30:33Z] [C0] Validated evidence pack | pack_id=FIXTURE:PACK-2026-LG-01 passage_count=4
+[2026-10-16T10:30:33Z] [C0] Evidence pack fixture verified | pack_id=FIXTURE:PACK-2026-LG-01 passage_count=4
+[2026-10-16T10:30:33Z] [C0] Validated assessment | case_id=FIXTURE:CASE-2026-LG selected_component=landing_gear
+[2026-10-16T10:30:33Z] [C0] Assessment fixture verified | hypotheses=2 components=5
+[2026-10-16T10:30:33Z] [C0] Validated run log | run_id=FIXTURE:RUN-2026-001 label=A
+[2026-10-16T10:30:33Z] [C0] RunLog fixture verified | run_id=FIXTURE:RUN-2026-001 status=verified
+[2026-10-16T10:30:33Z] [C0] Validated benchmark | case_id=FIXTURE:CASE-2026-LG questions=1
+[2026-10-16T10:30:33Z] [C0] Benchmark fixture verified | case_id=FIXTURE:CASE-2026-LG questions=1
+[2026-10-16T10:30:33Z] [C0] All fixtures passed schema and semantic validation
+[2026-10-16T10:30:34Z] [C0] Checking required environment variables | required_count=7
+[2026-10-16T10:30:34Z] [C0] Missing configuration setting | missing_var=LLM_BASE_URL
+[2026-10-16T10:30:34Z] [C0] Checking required environment variables | required_count=7
+[2026-10-16T10:30:34Z] [C0] Settings successfully loaded and validated | data_dir=data
+[2026-10-16T10:30:34Z] [C0] Self-test diagnostic event | test_id=selftest_001 status=ok
